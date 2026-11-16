@@ -107,7 +107,7 @@ Writing a new app so it works on every phone without extra effort:
 - Let a wide table scroll itself (`display: block; overflow-x: auto`, see `.an-table`) instead of being cut off.
 - Small click targets (arrows, close dots, tabs) get a `@media (pointer: coarse)` block that makes them at least about 28px.
 - Menus and popups that sit above the taskbar need a `max-height` using `dvh` and `overflow-y: auto`, so a long list scrolls instead of running off the screen.
-- Use `var(--taskbar-h)` and `taskbarHeight()`, never 30: the taskbar is taller on touch screens. (There is deliberately no `viewport-fit=cover` and no safe-area padding: the browser keeps the page inside a phone's safe area itself. Painting under it made the taskbar a tall, oddly banded block on some devices.)
+- Use `var(--taskbar-h)` and `taskbarHeight()`, never 30: the taskbar is taller on touch screens. (There is deliberately no `viewport-fit=cover` and no safe-area padding: it made the taskbar a tall, oddly banded block on a real phone. Some phone browsers also keep a strip at the very bottom that no page can paint; it takes its colour from `theme-color` in `index.html`, set to the taskbar's bottom-edge colour.)
 
 Check a new app at 375×812 and at 320×568, and at the normal desktop size to be sure nothing there changed.
 

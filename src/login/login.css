@@ -409,6 +409,8 @@ button {
 
   .brand-logo {
     width: min(100%, 210px);
+    /* Its wrapper is as wide as the SVG's own 290px size, so the smaller logo has to be centred inside it. */
+    margin-inline: auto;
   }
 
   .brand-hint {
@@ -416,9 +418,11 @@ button {
     font-size: 17px;
   }
 
+  /* Start just under the divider. Centred, they float in the middle of whatever height the screen has left. */
   .logon-users {
-    padding: 20px 12px;
+    padding: 24px 12px 20px;
     align-items: center;
+    justify-content: flex-start;
   }
 
   .user-card {
@@ -545,9 +549,4 @@ html body {
     width: 38px;
     height: 38px;
   }
-}
-
-/* Keep the bottom bar's text clear of a phone's home indicator (viewport-fit=cover in login.html). */
-.logon-bottom {
-  padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
 }

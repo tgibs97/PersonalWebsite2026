@@ -13,8 +13,8 @@ import { track, trackLeave } from './track'
 import type { AppDef, Rect, WindowState } from './types'
 
 /**
- * The taskbar's height right now. It is 30px, plus the home-indicator gap on a phone (see --taskbar-h in global.css),
- * so it is measured rather than assumed.
+ * The taskbar's height right now: 30px, or 40px on a touch screen (see --taskbar-h in global.css), so it is
+ * measured rather than assumed.
  */
 export const taskbarHeight = () => document.querySelector('.taskbar')?.getBoundingClientRect().height || 30
 

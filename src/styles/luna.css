@@ -377,7 +377,6 @@
 
 .taskbar {
   height: var(--taskbar-h);
-  padding-bottom: var(--safe-bottom);
   display: flex;
   align-items: stretch;
   background: linear-gradient(

@@ -1,7 +1,5 @@
 :root {
-  /* On a phone with a home indicator (viewport-fit=cover in index.html) the taskbar grows to sit above it. */
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --taskbar-h: calc(30px + var(--safe-bottom));
+  --taskbar-h: 30px;
   --font-ui: Tahoma, 'Segoe UI', Verdana, Geneva, sans-serif;
   --font-title: 'Trebuchet MS', Tahoma, 'Segoe UI', sans-serif;
   --xp-beige: #ece9d8;
@@ -21,6 +19,11 @@ body,
 #root {
   height: 100%;
   margin: 0;
+}
+
+/* Never seen on the desktop itself, but a phone can show a strip of it below the page (its own safe area): the taskbar's edge colour makes that read as part of the taskbar. */
+html {
+  background: #1941a5;
 }
 
 html {
@@ -53,6 +56,6 @@ button {
 /* A finger needs a taller taskbar than a mouse does. */
 @media (pointer: coarse) {
   :root {
-    --taskbar-h: calc(40px + var(--safe-bottom));
+    --taskbar-h: 40px;
   }
 }

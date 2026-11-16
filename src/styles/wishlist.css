@@ -106,10 +106,17 @@
   min-height: 0;
   overflow-y: auto;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
+  /* As many columns as fit, so a wide window shows more at once. min() lets a phone fall back to one column. */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  align-content: start;
   gap: 10px;
   background: #fff;
+}
+
+/* The intro line and the "nothing here" notes run the full width; only the cards share the rows. */
+.wl-cards > :not(.wl-card) {
+  grid-column: 1 / -1;
 }
 
 .wl-intro {

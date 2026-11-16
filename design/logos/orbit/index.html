@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tgOS Orbit: larger letters</title>
+<style>
+  :root { --ui: Tahoma, 'Segoe UI', Verdana, sans-serif; --title: 'Trebuchet MS', Tahoma, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 28px 20px 48px; background: #ece9d8; color: #1b2a4a; font: 13px/1.5 var(--ui); }
+  header { max-width: 980px; margin: 0 auto 22px; }
+  h1 { margin: 0 0 4px; font: 700 26px var(--title); color: #0b3a9e; }
+  header p { margin: 0; color: #4a5878; }
+  .grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 18px; }
+  .card { padding: 16px; background: #fff; border: 1px solid #c3cbe0; border-radius: 10px; box-shadow: 0 1px 3px rgba(11,58,158,.12); }
+  .card.original { background: #f7f3e2; border: 1px dashed #b3a874; }
+  h2 { margin: 0 0 4px; font: 700 18px var(--title); color: #0b3a9e; }
+  .n { display: inline-grid; place-items: center; min-width: 24px; height: 24px; margin-right: 4px; padding: 0 7px; border-radius: 12px; background: #0054e3; color: #fff; font-size: 13px; vertical-align: 2px; }
+  .original .n { background: #8a7f4a; }
+  .card p { margin: 0 0 12px; color: #4a5878; min-height: 3em; }
+  .login { padding: 22px 18px; border-radius: 8px; background: radial-gradient(ellipse at 18% 0%, #7c9cee 0%, #5a7edc 55%, #4e72d4 100%); }
+  .login svg { display: block; width: 100%; max-width: 340px; margin: 0 auto; height: auto; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .sizes { display: flex; align-items: flex-end; justify-content: space-around; padding: 12px 8px 8px; border-radius: 8px; }
+  .on-white { background: #f4f6fb; border: 1px solid #dde3f0; }
+  .on-bar { background: linear-gradient(to bottom, #3682e5, #245ddb 40%, #1d4ec0); }
+  figure { margin: 0; text-align: center; }
+  figcaption { margin-top: 4px; font-size: 10px; color: #6b7894; }
+  .on-bar figcaption { color: #cfe0ff; }
+  svg { overflow: visible; }
+</style>
+</head>
+<body>
+<header>
+  <h1>tgOS Orbit: larger letters</h1>
+  <p>Your pick, B, is first (dashed) for comparison. B1 to B3 grow the "tg" in steps; each shows the lockup on the log-on blue, then the mark at 64, 32 and 16px.</p>
+</header>
+<main class="grid">
+
+    <article class="card original">
+      <h2><span class="n">Current B</span> Orbit</h2>
+      <p>For comparison: the version you picked, with the letters at 33.</p>
+      <div class="login"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><defs>
+<radialGradient id="o1-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o1-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o1-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o1-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o1-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o1-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter><filter id="o1-tshadow" x="-10%" y="-20%" width="130%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="1.5" flood-color="#021a66" flood-opacity=".5"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o1-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o1-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o1-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o1-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o1-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o1-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o1-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="33" text-anchor="middle">
+<text x="49.5" y="57.7" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="55.9" fill="#fff">tg</text>
+</g><text x="104" y="63" font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="60" filter="url(#o1-tshadow)"><tspan fill="#fff">tg</tspan><tspan fill="#ffb13b">OS</tspan></text></svg></div>
+      <div class="rows"><div class="sizes on-white"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="o2-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o2-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o2-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o2-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o2-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o2-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o2-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o2-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o2-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o2-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o2-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o2-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o2-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="33" text-anchor="middle">
+<text x="49.5" y="57.7" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="55.9" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="o3-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o3-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o3-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o3-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o3-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o3-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o3-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o3-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o3-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o3-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o3-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o3-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o3-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="33" text-anchor="middle">
+<text x="49.5" y="57.7" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="55.9" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="o4-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o4-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o4-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o4-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o4-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o4-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o4-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o4-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o4-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o4-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o4-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o4-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o4-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="33" text-anchor="middle">
+<text x="49.5" y="57.7" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="55.9" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div><div class="sizes on-bar"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="o5-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o5-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o5-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o5-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o5-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o5-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o5-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o5-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o5-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o5-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o5-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o5-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o5-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="33" text-anchor="middle">
+<text x="49.5" y="57.7" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="55.9" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="o6-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o6-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o6-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o6-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o6-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o6-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o6-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o6-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o6-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o6-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o6-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o6-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o6-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="33" text-anchor="middle">
+<text x="49.5" y="57.7" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="55.9" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="o7-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o7-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o7-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o7-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o7-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o7-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o7-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o7-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o7-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o7-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o7-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o7-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o7-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="33" text-anchor="middle">
+<text x="49.5" y="57.7" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="55.9" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div></div>
+    </article>
+
+    <article class="card">
+      <h2><span class="n">B1</span> Larger letters</h2>
+      <p>Same sphere and ring; letters up 21% (33 to 40). The letters now sit in front of the ring where they meet.</p>
+      <div class="login"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><defs>
+<radialGradient id="o8-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o8-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o8-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o8-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o8-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o8-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter><filter id="o8-tshadow" x="-10%" y="-20%" width="130%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="1.5" flood-color="#021a66" flood-opacity=".5"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o8-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o8-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o8-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o8-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o8-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o8-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o8-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="59.8" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="58" fill="#fff">tg</text>
+</g><text x="104" y="63" font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="60" filter="url(#o8-tshadow)"><tspan fill="#fff">tg</tspan><tspan fill="#ffb13b">OS</tspan></text></svg></div>
+      <div class="rows"><div class="sizes on-white"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="o9-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o9-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o9-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o9-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o9-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o9-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o9-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o9-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o9-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o9-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o9-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o9-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o9-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="59.8" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="58" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="o10-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o10-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o10-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o10-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o10-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o10-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o10-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o10-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o10-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o10-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o10-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o10-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o10-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="59.8" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="58" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="o11-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o11-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o11-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o11-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o11-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o11-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o11-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o11-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o11-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o11-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o11-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o11-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o11-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="59.8" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="58" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div><div class="sizes on-bar"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="o12-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o12-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o12-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o12-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o12-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o12-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o12-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o12-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o12-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o12-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o12-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o12-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o12-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="59.8" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="58" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="o13-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o13-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o13-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o13-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o13-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o13-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o13-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o13-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o13-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o13-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o13-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o13-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o13-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="59.8" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="58" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="o14-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o14-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o14-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o14-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o14-clip"><circle cx="48" cy="46" r="32.5"/></clipPath>
+<filter id="o14-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+<path d="M-46 0A46 13 0 0 1 46 0" fill="none" stroke="url(#o14-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g filter="url(#o14-shadow)"><circle cx="48" cy="46" r="34" fill="url(#o14-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="35.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o14-clip)">
+<rect x="0" y="51.1" width="96" height="60" fill="url(#o14-glow)"/>
+<ellipse cx="48" cy="29" rx="25.2" ry="14.3" fill="url(#o14-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-22)"><path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="#a8500c" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+<path d="M-46 0A46 13 0 0 0 46 0" fill="none" stroke="url(#o14-ring)" stroke-width="4.5" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="59.8" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="58" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div></div>
+    </article>
+
+    <article class="card">
+      <h2><span class="n">B2</span> Larger letters, roomier sphere</h2>
+      <p>Letters up 39% (33 to 46). The sphere grows a little and the ring flattens and tightens to make room.</p>
+      <div class="login"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><defs>
+<radialGradient id="o15-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o15-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o15-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o15-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o15-clip"><circle cx="48" cy="46" r="35.5"/></clipPath>
+<filter id="o15-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter><filter id="o15-tshadow" x="-10%" y="-20%" width="130%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="1.5" flood-color="#021a66" flood-opacity=".5"/></filter></defs>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="url(#o15-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g filter="url(#o15-shadow)"><circle cx="48" cy="46" r="37" fill="url(#o15-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="38.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o15-clip)">
+<rect x="0" y="51.6" width="96" height="60" fill="url(#o15-glow)"/>
+<ellipse cx="48" cy="27.5" rx="27.4" ry="15.5" fill="url(#o15-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="url(#o15-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="46" text-anchor="middle">
+<text x="49.5" y="61.6" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="59.8" fill="#fff">tg</text>
+</g><text x="104" y="63" font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="60" filter="url(#o15-tshadow)"><tspan fill="#fff">tg</tspan><tspan fill="#ffb13b">OS</tspan></text></svg></div>
+      <div class="rows"><div class="sizes on-white"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="o16-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o16-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o16-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o16-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o16-clip"><circle cx="48" cy="46" r="35.5"/></clipPath>
+<filter id="o16-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="url(#o16-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g filter="url(#o16-shadow)"><circle cx="48" cy="46" r="37" fill="url(#o16-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="38.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o16-clip)">
+<rect x="0" y="51.6" width="96" height="60" fill="url(#o16-glow)"/>
+<ellipse cx="48" cy="27.5" rx="27.4" ry="15.5" fill="url(#o16-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="url(#o16-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="46" text-anchor="middle">
+<text x="49.5" y="61.6" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="59.8" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="o17-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o17-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o17-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o17-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o17-clip"><circle cx="48" cy="46" r="35.5"/></clipPath>
+<filter id="o17-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="url(#o17-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g filter="url(#o17-shadow)"><circle cx="48" cy="46" r="37" fill="url(#o17-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="38.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o17-clip)">
+<rect x="0" y="51.6" width="96" height="60" fill="url(#o17-glow)"/>
+<ellipse cx="48" cy="27.5" rx="27.4" ry="15.5" fill="url(#o17-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="url(#o17-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="46" text-anchor="middle">
+<text x="49.5" y="61.6" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="59.8" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="o18-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o18-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o18-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o18-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o18-clip"><circle cx="48" cy="46" r="35.5"/></clipPath>
+<filter id="o18-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="url(#o18-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g filter="url(#o18-shadow)"><circle cx="48" cy="46" r="37" fill="url(#o18-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="38.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o18-clip)">
+<rect x="0" y="51.6" width="96" height="60" fill="url(#o18-glow)"/>
+<ellipse cx="48" cy="27.5" rx="27.4" ry="15.5" fill="url(#o18-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="url(#o18-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="46" text-anchor="middle">
+<text x="49.5" y="61.6" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="59.8" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div><div class="sizes on-bar"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="o19-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o19-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o19-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o19-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o19-clip"><circle cx="48" cy="46" r="35.5"/></clipPath>
+<filter id="o19-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="url(#o19-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g filter="url(#o19-shadow)"><circle cx="48" cy="46" r="37" fill="url(#o19-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="38.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o19-clip)">
+<rect x="0" y="51.6" width="96" height="60" fill="url(#o19-glow)"/>
+<ellipse cx="48" cy="27.5" rx="27.4" ry="15.5" fill="url(#o19-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="url(#o19-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="46" text-anchor="middle">
+<text x="49.5" y="61.6" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="59.8" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="o20-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o20-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o20-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o20-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o20-clip"><circle cx="48" cy="46" r="35.5"/></clipPath>
+<filter id="o20-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="url(#o20-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g filter="url(#o20-shadow)"><circle cx="48" cy="46" r="37" fill="url(#o20-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="38.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o20-clip)">
+<rect x="0" y="51.6" width="96" height="60" fill="url(#o20-glow)"/>
+<ellipse cx="48" cy="27.5" rx="27.4" ry="15.5" fill="url(#o20-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="url(#o20-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="46" text-anchor="middle">
+<text x="49.5" y="61.6" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="59.8" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="o21-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o21-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o21-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o21-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o21-clip"><circle cx="48" cy="46" r="35.5"/></clipPath>
+<filter id="o21-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 12 0 0 1 47 0" fill="none" stroke="url(#o21-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g filter="url(#o21-shadow)"><circle cx="48" cy="46" r="37" fill="url(#o21-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="38.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o21-clip)">
+<rect x="0" y="51.6" width="96" height="60" fill="url(#o21-glow)"/>
+<ellipse cx="48" cy="27.5" rx="27.4" ry="15.5" fill="url(#o21-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-20)"><path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.7" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 12 0 0 0 47 0" fill="none" stroke="url(#o21-ring)" stroke-width="4.2" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="46" text-anchor="middle">
+<text x="49.5" y="61.6" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="59.8" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div></div>
+    </article>
+
+    <article class="card">
+      <h2><span class="n">B3</span> Largest letters</h2>
+      <p>Letters up 58% (33 to 52). The sphere is nearly full-size and the ring becomes a slim band, so the letters dominate.</p>
+      <div class="login"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><defs>
+<radialGradient id="o22-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o22-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o22-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o22-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o22-clip"><circle cx="48" cy="46" r="38.5"/></clipPath>
+<filter id="o22-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter><filter id="o22-tshadow" x="-10%" y="-20%" width="130%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="1.5" flood-color="#021a66" flood-opacity=".5"/></filter></defs>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="url(#o22-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g filter="url(#o22-shadow)"><circle cx="48" cy="46" r="40" fill="url(#o22-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="41.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o22-clip)">
+<rect x="0" y="52" width="96" height="60" fill="url(#o22-glow)"/>
+<ellipse cx="48" cy="26" rx="29.6" ry="16.8" fill="url(#o22-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="url(#o22-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="63.4" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="61.6" fill="#fff">tg</text>
+</g><text x="104" y="63" font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="60" filter="url(#o22-tshadow)"><tspan fill="#fff">tg</tspan><tspan fill="#ffb13b">OS</tspan></text></svg></div>
+      <div class="rows"><div class="sizes on-white"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="o23-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o23-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o23-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o23-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o23-clip"><circle cx="48" cy="46" r="38.5"/></clipPath>
+<filter id="o23-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="url(#o23-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g filter="url(#o23-shadow)"><circle cx="48" cy="46" r="40" fill="url(#o23-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="41.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o23-clip)">
+<rect x="0" y="52" width="96" height="60" fill="url(#o23-glow)"/>
+<ellipse cx="48" cy="26" rx="29.6" ry="16.8" fill="url(#o23-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="url(#o23-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="63.4" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="61.6" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="o24-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o24-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o24-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o24-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o24-clip"><circle cx="48" cy="46" r="38.5"/></clipPath>
+<filter id="o24-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="url(#o24-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g filter="url(#o24-shadow)"><circle cx="48" cy="46" r="40" fill="url(#o24-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="41.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o24-clip)">
+<rect x="0" y="52" width="96" height="60" fill="url(#o24-glow)"/>
+<ellipse cx="48" cy="26" rx="29.6" ry="16.8" fill="url(#o24-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="url(#o24-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="63.4" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="61.6" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="o25-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o25-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o25-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o25-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o25-clip"><circle cx="48" cy="46" r="38.5"/></clipPath>
+<filter id="o25-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="url(#o25-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g filter="url(#o25-shadow)"><circle cx="48" cy="46" r="40" fill="url(#o25-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="41.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o25-clip)">
+<rect x="0" y="52" width="96" height="60" fill="url(#o25-glow)"/>
+<ellipse cx="48" cy="26" rx="29.6" ry="16.8" fill="url(#o25-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="url(#o25-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="63.4" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="61.6" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div><div class="sizes on-bar"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="o26-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o26-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o26-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o26-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o26-clip"><circle cx="48" cy="46" r="38.5"/></clipPath>
+<filter id="o26-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="url(#o26-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g filter="url(#o26-shadow)"><circle cx="48" cy="46" r="40" fill="url(#o26-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="41.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o26-clip)">
+<rect x="0" y="52" width="96" height="60" fill="url(#o26-glow)"/>
+<ellipse cx="48" cy="26" rx="29.6" ry="16.8" fill="url(#o26-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="url(#o26-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="63.4" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="61.6" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="o27-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o27-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o27-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o27-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o27-clip"><circle cx="48" cy="46" r="38.5"/></clipPath>
+<filter id="o27-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="url(#o27-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g filter="url(#o27-shadow)"><circle cx="48" cy="46" r="40" fill="url(#o27-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="41.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o27-clip)">
+<rect x="0" y="52" width="96" height="60" fill="url(#o27-glow)"/>
+<ellipse cx="48" cy="26" rx="29.6" ry="16.8" fill="url(#o27-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="url(#o27-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="63.4" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="61.6" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="o28-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="o28-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="o28-ring" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffd36b"/><stop offset=".5" stop-color="#f58a2c"/><stop offset="1" stop-color="#c4600f"/>
+</linearGradient>
+<radialGradient id="o28-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".6"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="o28-clip"><circle cx="48" cy="46" r="38.5"/></clipPath>
+<filter id="o28-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity=".45"/></filter></defs>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.5"/>
+<path d="M-47 0A47 10 0 0 1 47 0" fill="none" stroke="url(#o28-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g filter="url(#o28-shadow)"><circle cx="48" cy="46" r="40" fill="url(#o28-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="46" r="41.5" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#o28-clip)">
+<rect x="0" y="52" width="96" height="60" fill="url(#o28-glow)"/>
+<ellipse cx="48" cy="26" rx="29.6" ry="16.8" fill="url(#o28-gloss)" opacity=".85"/>
+</g>
+<g transform="translate(48 47) rotate(-16)"><path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="#a8500c" stroke-width="5.3" stroke-linecap="round" opacity="0.45"/>
+<path d="M-47 0A47 10 0 0 0 47 0" fill="none" stroke="url(#o28-ring)" stroke-width="3.8" stroke-linecap="round"/></g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="63.4" fill="#052a86" opacity=".6">tg</text>
+<text x="48" y="61.6" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div></div>
+    </article>
+</main>
+</body>
+</html>

@@ -1,0 +1,688 @@
+/*
+ * The desktop wallpaper: a sky, drifting clouds, a hill, and a monthly theme's scenery and weather.
+ * Rule of thumb for everything that moves: animate only `transform` and `opacity`, slowly, so it is
+ * smooth for the compositor and easy on the eye. Everything is switched off for "reduce motion".
+ */
+
+/* ---------- Layout ---------- */
+
+.wallpaper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  container-type: size;
+}
+
+.wallpaper-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.wallpaper-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/*
+ * A "stage" is the box an SVG with preserveAspectRatio="slice" would fill: a 16:10 box, centred and cropped
+ * to the screen. Layers drawn inside one stay lined up with the sky and hill at any window shape.
+ */
+.stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, 160vh);
+  height: max(62.5vw, 100vh);
+  width: max(100cqw, 160cqh);
+  height: max(62.5cqw, 100cqh);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.stage-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ---------- Clouds ----------
+ * The track is two identical tiles side by side and slides one tile per loop, left to right, so the
+ * restart is invisible. Each layer sets its own animation-duration for a little parallax. */
+
+.cloud-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  display: flex;
+  will-change: transform;
+  animation: cloud-drift linear infinite;
+}
+
+.cloud-tile {
+  flex: 0 0 50%;
+  width: 50%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+@keyframes cloud-drift {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ---------- Sky and land scenery (SVG) ---------- */
+
+.glow-pulse {
+  animation: glow-pulse 9s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.07);
+  }
+}
+
+.sun-rays {
+  animation: spin 120s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.rainbow {
+  opacity: 0;
+  animation: rainbow-fade 70s ease-in-out infinite;
+}
+
+@keyframes rainbow-fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  18%,
+  62% {
+    opacity: 0.5;
+  }
+
+  80% {
+    opacity: 0;
+  }
+}
+
+/* A firework is visible for about a sixth of its cycle, then rests. */
+.burst {
+  opacity: 0;
+  animation: burst 20s ease-out infinite;
+}
+
+@keyframes burst {
+  0% {
+    opacity: 0;
+    transform: scale(0.15);
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  11% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  17%,
+  100% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+.aurora-curtain {
+  opacity: var(--base);
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: aurora-sway 30s ease-in-out infinite;
+}
+
+@keyframes aurora-sway {
+  0%,
+  100% {
+    opacity: calc(var(--base) * 0.65);
+    transform: translate3d(-40px, 0, 0) scaleY(0.9);
+  }
+
+  50% {
+    opacity: var(--base);
+    transform: translate3d(40px, -10px, 0) scaleY(1.12);
+  }
+}
+
+.tree-light {
+  animation: tree-light 3s ease-in-out infinite;
+}
+
+@keyframes tree-light {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.pumpkin-glow {
+  animation: flicker 3.4s ease-in-out infinite alternate;
+}
+
+.pumpkin-face {
+  animation: flicker 3.4s ease-in-out infinite alternate;
+}
+
+/* The flag's cloth ripples: each slice bobs by its own --amp, a beat behind the slice nearer the pole. */
+.flag-slice {
+  animation: flag-wave 2.6s ease-in-out infinite;
+}
+
+@keyframes flag-wave {
+  0%,
+  100% {
+    transform: translateY(calc(var(--amp) * -1));
+  }
+
+  50% {
+    transform: translateY(var(--amp));
+  }
+}
+
+/* The turkey: head dips to peck the grass a few times every nine seconds; the tail fan breathes. */
+.turkey-head {
+  transform-origin: 12px -36px;
+  animation: turkey-peck 9s ease-in-out infinite;
+}
+
+@keyframes turkey-peck {
+  0%,
+  66%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  72% {
+    transform: rotate(34deg);
+  }
+
+  77% {
+    transform: rotate(6deg);
+  }
+
+  82% {
+    transform: rotate(32deg);
+  }
+
+  88% {
+    transform: rotate(0deg);
+  }
+}
+
+.turkey-tail {
+  transform-origin: -12px -30px;
+  animation: turkey-tail 8s ease-in-out infinite alternate;
+}
+
+@keyframes turkey-tail {
+  from {
+    transform: rotate(-1.6deg) scale(1);
+  }
+
+  to {
+    transform: rotate(1.6deg) scale(1.025);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.72;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.82;
+  }
+
+  100% {
+    opacity: 0.95;
+  }
+}
+
+/* ---------- Weather: snow, rain, petals, leaves, motes ---------- */
+
+.particles,
+.movers {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Each particle falls (or rises) across the whole screen; its inner element sways and spins as it goes. */
+.particle {
+  position: absolute;
+  top: -40px;
+  width: var(--size);
+  height: var(--size);
+  color: var(--color);
+  will-change: transform;
+  animation: particle-fall var(--dur) linear var(--delay) infinite;
+}
+
+.particle.rise {
+  top: auto;
+  bottom: -40px;
+  animation-name: particle-rise;
+}
+
+.particle i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: particle-sway var(--sway-dur) ease-in-out infinite alternate;
+}
+
+.particle svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.particle-snow i,
+.particle-mote i {
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color) 0 34%, transparent 72%);
+}
+
+.particle-rain {
+  width: 1.6px;
+  height: var(--size);
+}
+
+.particle-rain i {
+  background: linear-gradient(to bottom, transparent, var(--color));
+  transform: rotate(8deg);
+  animation: none;
+}
+
+@keyframes particle-fall {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(var(--drift), calc(100cqh + 80px), 0);
+  }
+}
+
+@keyframes particle-rise {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(var(--drift), calc(-100cqh - 80px), 0);
+  }
+}
+
+@keyframes particle-sway {
+  from {
+    transform: translateX(calc(var(--sway) * -1)) rotate(calc(var(--spin) * -1));
+  }
+
+  to {
+    transform: translateX(var(--sway)) rotate(var(--spin));
+  }
+}
+
+/* ---------- Things that cross the screen ---------- */
+
+.mover {
+  position: absolute;
+  left: 0;
+  will-change: transform;
+  animation: mover-cross var(--dur) linear var(--delay) infinite;
+}
+
+/* Crosses in the first part of the cycle, then waits offscreen: an occasional visitor, not a parade. */
+.mover-sparse {
+  animation-name: mover-cross-sparse;
+}
+
+.mover svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.balloon {
+  width: calc(clamp(28px, 4.8cqw, 86px) * var(--scale));
+}
+
+.geese {
+  width: clamp(100px, 15cqw, 280px);
+}
+
+.bat {
+  width: calc(clamp(24px, 3.2cqw, 56px) * var(--scale));
+}
+
+.santa {
+  width: clamp(150px, 22cqw, 420px);
+}
+
+/* Santa rises and dips in a slow arc as he travels. */
+.fly {
+  animation: santa-fly 9s ease-in-out infinite alternate;
+}
+
+@keyframes santa-fly {
+  from {
+    transform: translateY(-14px) rotate(-1.5deg);
+  }
+
+  to {
+    transform: translateY(12px) rotate(1.5deg);
+  }
+}
+
+@keyframes mover-cross {
+  from {
+    transform: translate3d(-20cqw, 0, 0);
+  }
+
+  to {
+    transform: translate3d(120cqw, 0, 0);
+  }
+}
+
+@keyframes mover-cross-sparse {
+  0% {
+    transform: translate3d(-20cqw, 0, 0);
+  }
+
+  55%,
+  100% {
+    transform: translate3d(120cqw, 0, 0);
+  }
+}
+
+.bob {
+  animation: bob 7s ease-in-out var(--bob-delay, 0s) infinite alternate;
+}
+
+@keyframes bob {
+  from {
+    transform: translateY(-5px) rotate(-1.2deg);
+  }
+
+  to {
+    transform: translateY(5px) rotate(1.2deg);
+  }
+}
+
+.flap {
+  animation: flap 1.7s ease-in-out infinite;
+}
+
+@keyframes flap {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(-0.6);
+  }
+}
+
+.flap-fast {
+  transform-box: fill-box;
+  transform-origin: 50% 40%;
+  animation: flap-fast 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes flap-fast {
+  from {
+    transform: scaleY(1);
+  }
+
+  to {
+    transform: scaleY(0.45);
+  }
+}
+
+/* ---------- Butterflies, fireflies, fog ---------- */
+
+.mover-wander {
+  position: absolute;
+  will-change: transform;
+}
+
+.butterfly {
+  width: clamp(22px, 2.6cqw, 44px);
+}
+
+.butterfly svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.wander-a {
+  animation: wander-a var(--dur) ease-in-out var(--delay) infinite;
+}
+
+.wander-b {
+  animation: wander-b var(--dur) ease-in-out var(--delay) infinite;
+}
+
+.wander-c {
+  animation: wander-c var(--dur) ease-in-out var(--delay) infinite;
+}
+
+@keyframes wander-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(8deg);
+  }
+
+  25% {
+    transform: translate3d(11cqw, -5cqh, 0) rotate(-6deg);
+  }
+
+  50% {
+    transform: translate3d(20cqw, 2cqh, 0) rotate(10deg);
+  }
+
+  75% {
+    transform: translate3d(9cqw, -3cqh, 0) rotate(-8deg);
+  }
+}
+
+@keyframes wander-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+  }
+
+  30% {
+    transform: translate3d(-12cqw, -4cqh, 0) rotate(6deg);
+  }
+
+  60% {
+    transform: translate3d(-6cqw, 3cqh, 0) rotate(-10deg);
+  }
+
+  80% {
+    transform: translate3d(-15cqw, 0, 0) rotate(8deg);
+  }
+}
+
+@keyframes wander-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(4deg);
+  }
+
+  20% {
+    transform: translate3d(7cqw, 4cqh, 0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translate3d(-8cqw, 6cqh, 0) rotate(8deg);
+  }
+
+  75% {
+    transform: translate3d(-14cqw, -2cqh, 0) rotate(-4deg);
+  }
+}
+
+.wings {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: wing-flap 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes wing-flap {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0.3);
+  }
+}
+
+.firefly {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff6a8;
+  box-shadow: 0 0 6px 2px rgba(255, 238, 120, 0.85);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation:
+    firefly-blink var(--blink) ease-in-out var(--delay) infinite,
+    firefly-wander var(--wander) ease-in-out var(--delay) infinite alternate;
+}
+
+@keyframes firefly-blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  40%,
+  60% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes firefly-wander {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(var(--wx), var(--wy), 0);
+  }
+}
+
+.fog {
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(var(--fog-rgb, 255, 255, 255), 0.75) 0%,
+    rgba(var(--fog-rgb, 255, 255, 255), 0.35) 40%,
+    rgba(var(--fog-rgb, 255, 255, 255), 0) 72%
+  );
+  will-change: transform;
+  animation: fog-sway var(--dur) ease-in-out var(--delay) infinite alternate;
+}
+
+@keyframes fog-sway {
+  from {
+    transform: translate3d(-6%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(6%, 0, 0);
+  }
+}
+
+/* ---------- Reduced motion: keep the scenery, drop the motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .wallpaper * {
+    animation: none !important;
+  }
+
+  .cloud-track {
+    transform: none;
+  }
+
+  .particles,
+  .movers {
+    display: none;
+  }
+
+  .rainbow {
+    opacity: 0.45;
+  }
+}

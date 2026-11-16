@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><defs>
+<radialGradient id="glass-body" cx=".5" cy=".32" r=".78">
+<stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#d4e9ff"/>
+<stop offset=".78" stop-color="#7fb3f4"/><stop offset="1" stop-color="#3a78e6"/>
+</radialGradient>
+<linearGradient id="glass-spec" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity=".1"/>
+</linearGradient>
+<radialGradient id="glass-under" cx=".5" cy="1" r=".75">
+<stop offset="0" stop-color="#a6f2ff" stop-opacity=".95"/><stop offset="1" stop-color="#a6f2ff" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="glass-clip"><circle cx="48" cy="45" r="39.5"/></clipPath>
+<filter id="glass-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#glass-shadow)"><circle cx="48" cy="45" r="41" fill="url(#glass-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="45" r="43" fill="none" stroke="#1a56d6" stroke-width="1.5"/>
+<g clip-path="url(#glass-clip)">
+<ellipse cx="48" cy="80" rx="34" ry="22" fill="url(#glass-under)"/>
+<ellipse cx="48" cy="22" rx="29" ry="14" fill="url(#glass-spec)" opacity=".95"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="44" text-anchor="middle">
+<text x="49" y="62.5" fill="#fff" opacity=".95">tg</text>
+<text x="48" y="61" fill="#0b3a9e">tg</text>
+</g></svg>

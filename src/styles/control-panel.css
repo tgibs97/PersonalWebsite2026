@@ -1,0 +1,185 @@
+/*
+ * The Control Panel window (src/apps/admin/ControlPanel.tsx). Imported with `?inline` so it ships inside the
+ * admin-only bundle: nobody but the owner downloads it.
+ */
+
+.cp {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--xp-beige);
+  color: #000;
+  font-size: 11px;
+}
+
+.cp button {
+  cursor: default;
+}
+
+.cp-head {
+  flex: none;
+  padding: 10px 14px;
+  border-bottom: 1px solid #aca899;
+  background: linear-gradient(to right, #fff, #cfdcf5);
+}
+
+.cp-head h1 {
+  margin: 0 0 4px;
+  color: #0c327d;
+  font-size: 16px;
+}
+
+.cp-head p {
+  margin: 0;
+  max-width: 560px;
+  color: #333;
+}
+
+.cp-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 10px 14px;
+  background: #fff;
+}
+
+.cp-center {
+  padding: 20px;
+  text-align: center;
+  color: #444;
+}
+
+.cp-group + .cp-group {
+  margin-top: 14px;
+}
+
+.cp-group h2 {
+  margin: 0;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #aebde0;
+  color: #215dc6;
+  font-size: 12px;
+}
+
+.cp-note {
+  margin: 4px 0 6px;
+  color: #666;
+}
+
+.cp-group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cp-group li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.cp-name {
+  flex: 1;
+  font-size: 12px;
+}
+
+.cp-foot {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-top: 1px solid #c5c2b2;
+  background: var(--xp-beige);
+}
+
+.cp-small {
+  padding: 2px 10px;
+}
+
+.cp .xp-button:disabled {
+  color: #8a8a80;
+  box-shadow: none;
+}
+
+.cp-error {
+  color: #b00020;
+}
+
+/* The column headings stay put while the list scrolls. Each one flips its whole column. */
+.cp-cols {
+  position: sticky;
+  top: -10px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: -10px 0 8px;
+  padding: 8px 6px 4px;
+  background: #fff;
+}
+
+.cp-colhead {
+  width: 96px;
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  color: #0c327d;
+  font: 700 11px var(--font-ui);
+  text-align: center;
+}
+
+.cp-colhead:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.cp-cols .cp-name {
+  font-size: 0;
+}
+
+.cp-saving {
+  width: 16px;
+  flex: none;
+}
+
+.cp-cell {
+  width: 96px;
+  flex: none;
+  text-align: center;
+}
+
+/* ---------- Small screens and touch (the two rules are explained in luna.css) ---------- */
+
+@media (max-width: 700px) {
+  .cp-body {
+    padding-inline: 10px;
+  }
+
+  .cp-group li,
+  .cp-cols {
+    gap: 6px;
+  }
+
+  /* Three tick columns have to share the width with the names, so they slim down. */
+  .cp-colhead,
+  .cp-cell {
+    width: 56px;
+  }
+
+  .cp-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (pointer: coarse) {
+  .cp-group li {
+    padding-block: 8px;
+  }
+
+  .cp-colhead {
+    padding-block: 6px;
+  }
+}

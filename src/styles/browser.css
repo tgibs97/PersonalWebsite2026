@@ -1,0 +1,202 @@
+/*
+ * The make-believe web browser (src/apps/browser): XP-era Internet Explorer chrome around a start page of
+ * shortcut tiles. An address bar, one static tab, a white page area, and a status bar.
+ */
+
+.bp {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--xp-beige);
+  color: #000;
+  font-size: 11px;
+}
+
+/* ---------- Address bar and tab ---------- */
+
+.bp-address {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-bottom: 1px solid #c5c2b2;
+  background: var(--xp-beige);
+}
+
+.bp-address-label {
+  color: #555;
+}
+
+.bp-address-field {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px;
+  border: 1px solid #7f9db9;
+  background: #fff;
+}
+
+.bp-url {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.bp-tabs {
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  padding: 5px 6px 0;
+  border-bottom: 1px solid #6d8bc4;
+  background: linear-gradient(to bottom, #d8e4f8, #bcd0ef);
+}
+
+.bp-tab {
+  position: relative;
+  flex: 0 1 168px;
+  min-width: 0;
+  margin-bottom: -1px;
+  padding: 5px 12px 5px 9px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #6d8bc4;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  background: #fff;
+  color: #1b2a4a;
+  font-weight: 700;
+}
+
+.bp-tab svg {
+  flex: none;
+}
+
+.bp-tab-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- The page ---------- */
+
+.bp-view {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: #fff;
+}
+
+.bp-home-header {
+  padding: 22px 26px 16px;
+  border-bottom: 3px solid #f4a54a;
+  background: linear-gradient(to bottom, #eaf1fc, #fff);
+}
+
+.bp-home-header h1 {
+  margin: 0;
+  color: #0b3a9e;
+  font: 700 24px var(--font-title);
+}
+
+.bp-home-header p {
+  margin: 4px 0 0;
+  color: #555;
+  font-size: 12px;
+}
+
+.bp-shortcuts {
+  margin: 0;
+  padding: 20px 26px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+  list-style: none;
+}
+
+.bp-tile {
+  padding: 16px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #d3dbea;
+  border-radius: 6px;
+  background: linear-gradient(to bottom, #fff, #f3f6fc);
+  color: #000;
+  font: 11px var(--font-ui);
+  text-align: center;
+  text-decoration: none;
+  cursor: default;
+}
+
+.bp-tile:hover,
+.bp-tile:focus-visible {
+  border-color: #f4a54a;
+  outline: none;
+  background: linear-gradient(to bottom, #fffdf6, #fff1d2);
+  box-shadow: 0 1px 4px rgba(244, 165, 74, 0.5);
+}
+
+.bp-tile-title {
+  font: 700 13px var(--font-title);
+  color: #0b3a9e;
+}
+
+.bp-tile-url {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #7a8294;
+  font-size: 10px;
+}
+
+/* ---------- Status bar ---------- */
+
+.bp-status {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 3px 8px;
+  border-top: 1px solid #aca899;
+  background: var(--xp-beige);
+}
+
+.bp-status-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bp-zone {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 10px;
+  border-left: 1px solid #aca899;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 700px) {
+  .bp-shortcuts {
+    padding: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .bp-home-header {
+    padding: 16px 16px 12px;
+  }
+}

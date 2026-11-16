@@ -1,0 +1,1107 @@
+/* ---------- Desktop ---------- */
+
+.desktop {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.desktop-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: var(--taskbar-h);
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 8px 4px;
+}
+
+.desktop-recycle {
+  position: absolute;
+  right: 8px;
+  bottom: calc(var(--taskbar-h) + 10px);
+}
+
+.desktop-icon {
+  width: 76px;
+  padding: 3px 2px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: 1px solid transparent;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  cursor: default;
+}
+
+.desktop-icon svg {
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.4));
+}
+
+.desktop-icon span {
+  padding: 1px 3px;
+  line-height: 1.25;
+  text-shadow: 1px 1px 2px #000, 0 0 3px rgba(0, 0, 0, 0.6);
+  overflow-wrap: anywhere;
+}
+
+.desktop-icon:focus {
+  outline: none;
+}
+
+.desktop-icon:focus-visible span {
+  outline: 1px dotted #fff;
+}
+
+.desktop-icon.selected span {
+  background: var(--xp-select);
+  text-shadow: none;
+}
+
+.desktop-icon.selected svg {
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.4)) brightness(0.85) sepia(0.2) hue-rotate(185deg) saturate(1.6);
+}
+
+.power-off {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background: #000;
+  color: #ff3b30;
+}
+
+/* The round power button on the "switched off" screen: it pulses slowly red, like a standby light. */
+.power-button {
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 3px solid rgba(255, 59, 48, 0.55);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #2a1210, #0a0606 72%);
+  color: #ff3b30;
+  box-shadow: 0 0 12px rgba(255, 59, 48, 0.2), inset 0 0 8px rgba(255, 59, 48, 0.1);
+  cursor: pointer;
+  animation: standby-pulse 3.6s ease-in-out infinite;
+}
+
+.power-button:hover {
+  color: #ff6a5e;
+  border-color: #ff6a5e;
+  animation: none;
+  box-shadow: 0 0 28px rgba(255, 59, 48, 0.65), inset 0 0 14px rgba(255, 59, 48, 0.28);
+}
+
+.power-button:active {
+  transform: scale(0.96);
+}
+
+.power-button:focus-visible {
+  outline: 2px dotted #fff;
+  outline-offset: 5px;
+}
+
+@keyframes standby-pulse {
+  50% {
+    border-color: rgba(255, 59, 48, 1);
+    color: #ff5a4f;
+    box-shadow: 0 0 30px rgba(255, 59, 48, 0.6), inset 0 0 14px rgba(255, 59, 48, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .power-button {
+    animation: none;
+  }
+}
+
+/* ---------- Windows ---------- */
+
+.window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0 3px 3px;
+  background: #6582d1;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 0 0 1px rgba(8, 24, 120, 0.55), 2px 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.window.active {
+  background: var(--xp-blue-dark);
+  box-shadow: 0 0 0 1px rgba(0, 20, 150, 0.8), 2px 4px 16px rgba(0, 0, 0, 0.55);
+}
+
+.window.minimized {
+  display: none;
+}
+
+.window.maximized {
+  inset: 0 0 var(--taskbar-h) 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.titlebar {
+  flex: none;
+  height: 30px;
+  margin: 0 -3px;
+  padding: 0 5px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(
+    to bottom,
+    #7e9ee3 0%,
+    #7f9fe4 8%,
+    #7595df 20%,
+    #7191de 50%,
+    #7a9be3 82%,
+    #6a8bd7 94%,
+    #5a79c6 100%
+  );
+  touch-action: none;
+}
+
+.window.active .titlebar {
+  background: linear-gradient(
+    to bottom,
+    #0058ee 0%,
+    #3593ff 4%,
+    #288eff 6%,
+    #127dff 8%,
+    #036ffc 10%,
+    #0262ee 14%,
+    #0057e5 20%,
+    #0054e3 24%,
+    #0055eb 56%,
+    #005bf5 66%,
+    #026afe 76%,
+    #0062ef 86%,
+    #0052d6 92%,
+    #0040ab 94%,
+    #003092 100%
+  );
+}
+
+.window.maximized .titlebar {
+  border-radius: 0;
+}
+
+.titlebar-icon {
+  flex: none;
+}
+
+.titlebar-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #e3e8f6;
+  font: 700 13px var(--font-title);
+  text-shadow: 1px 1px 1px #0f1089;
+}
+
+.window.active .titlebar-text {
+  color: #fff;
+}
+
+.titlebar-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.tb-btn {
+  width: 21px;
+  height: 21px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: radial-gradient(circle at 90% 90%, #0054e9 0%, #2263d5 55%, #4479e4 70%, #a3bbec 90%, #fff 100%);
+  cursor: default;
+}
+
+.tb-btn.tb-close {
+  background: radial-gradient(circle at 90% 90%, #cc4600 0%, #dc6527 55%, #cd7546 70%, #ffccb2 90%, #fff 100%);
+}
+
+.window:not(.active) .tb-btn {
+  filter: saturate(0.55) brightness(1.1);
+}
+
+.tb-btn:hover {
+  filter: brightness(1.12);
+}
+
+.tb-btn:active {
+  filter: brightness(0.85);
+}
+
+.window-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: var(--xp-beige);
+}
+
+.resize {
+  position: absolute;
+  z-index: 1;
+  touch-action: none;
+}
+
+.resize-n,
+.resize-s {
+  left: 8px;
+  right: 8px;
+  height: 5px;
+}
+
+.resize-e,
+.resize-w {
+  top: 8px;
+  bottom: 8px;
+  width: 5px;
+}
+
+.resize-n {
+  top: -2px;
+  cursor: ns-resize;
+}
+
+.resize-s {
+  bottom: -2px;
+  cursor: ns-resize;
+}
+
+.resize-e {
+  right: -2px;
+  cursor: ew-resize;
+}
+
+.resize-w {
+  left: -2px;
+  cursor: ew-resize;
+}
+
+.resize-ne,
+.resize-nw,
+.resize-se,
+.resize-sw {
+  width: 10px;
+  height: 10px;
+}
+
+.resize-ne {
+  top: -2px;
+  right: -2px;
+  cursor: nesw-resize;
+}
+
+.resize-nw {
+  top: -2px;
+  left: -2px;
+  cursor: nwse-resize;
+}
+
+.resize-se {
+  bottom: -2px;
+  right: -2px;
+  cursor: nwse-resize;
+}
+
+.resize-sw {
+  bottom: -2px;
+  left: -2px;
+  cursor: nesw-resize;
+}
+
+/* ---------- App content ---------- */
+
+.app-page {
+  min-height: 100%;
+  padding: 18px 22px;
+  background: #fff;
+  font-size: 13px;
+  line-height: 1.55;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.app-page h1 {
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #c6d6f2;
+  color: #0b3a9e;
+  font: 700 21px var(--font-title);
+}
+
+.app-page p {
+  margin: 0 0 10px;
+}
+
+.app-page .placeholder {
+  color: #7a7a7a;
+  font-style: italic;
+}
+
+.app-page--center {
+  display: grid;
+  place-items: center;
+  color: #555;
+}
+
+/* ---------- Taskbar ---------- */
+
+.taskbar-root {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1000;
+}
+
+.taskbar {
+  height: var(--taskbar-h);
+  padding-bottom: var(--safe-bottom);
+  display: flex;
+  align-items: stretch;
+  background: linear-gradient(
+    to bottom,
+    #1f2f86 0%,
+    #3165c4 3%,
+    #3682e5 6%,
+    #4490e6 10%,
+    #3883e5 12%,
+    #2b71e0 15%,
+    #2663da 18%,
+    #235bd6 20%,
+    #2258d5 23%,
+    #2157d6 38%,
+    #245ddb 54%,
+    #2562df 86%,
+    #245fdc 89%,
+    #2158d4 92%,
+    #1d4ec0 95%,
+    #1941a5 98%
+  );
+}
+
+.start-button {
+  flex: none;
+  padding: 0 12px 0 11px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  border-radius: 0 12px 12px 0;
+  background: linear-gradient(
+    to bottom,
+    #6ac56a 0%,
+    #3c9f3c 10%,
+    #2f8d2f 45%,
+    #2f8d2f 55%,
+    #3a9e3a 85%,
+    #1e6c1e 100%
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15), 2px 0 4px rgba(0, 0, 0, 0.4);
+  cursor: default;
+}
+
+.start-button:has(.start-user) {
+  padding-right: 18px;
+}
+
+.start-button svg {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+}
+
+.start-button:hover {
+  filter: brightness(1.1);
+}
+
+.start-button.pressed,
+.start-button:active {
+  filter: brightness(0.85);
+}
+
+/* Who is logged on, inside the green Start button where XP said "start". */
+/* Always shown in full: the button grows to fit the name. */
+.start-user {
+  white-space: nowrap;
+  color: #fff;
+  font: italic 700 15px var(--font-title);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.task-buttons {
+  flex: 1;
+  min-width: 0;
+  padding: 3px 4px;
+  display: flex;
+  gap: 3px;
+}
+
+.task-button {
+  flex: 0 1 160px;
+  min-width: 36px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow: hidden;
+  border: 1px solid #1a3f9c;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #5b9bf5 0%, #3c81f3 20%, #3278ec 80%, #2c6fe0 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  color: #fff;
+  text-align: left;
+  cursor: default;
+}
+
+.task-button svg {
+  flex: none;
+}
+
+.task-button span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-button:hover {
+  filter: brightness(1.1);
+}
+
+.task-button.active {
+  background: linear-gradient(to bottom, #1b4cb0 0%, #1e52b7 50%, #2559c2 100%);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.tray {
+  flex: none;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #0c3c9c;
+  background: linear-gradient(
+    to bottom,
+    #0c59b9 1%,
+    #139ee9 6%,
+    #18b5f2 10%,
+    #139beb 14%,
+    #1290e8 19%,
+    #0d8fe7 63%,
+    #0d9ff1 81%,
+    #0f9eed 88%,
+    #119ef0 91%,
+    #1656c5 100%
+  );
+  box-shadow: inset 1px 0 1px #18bbff;
+  color: #fff;
+  font: 11px var(--font-ui);
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  cursor: default;
+}
+
+.tray:hover {
+  filter: brightness(1.1);
+}
+
+.tray.pressed,
+.tray:active {
+  filter: brightness(0.88);
+}
+
+/* ---------- Clock menu: pick a desktop theme ---------- */
+
+.clock-menu {
+  position: absolute;
+  right: 0;
+  bottom: var(--taskbar-h);
+  width: 372px;
+  max-width: 100vw;
+  max-height: calc(100vh - var(--taskbar-h));
+  max-height: calc(100dvh - var(--taskbar-h));
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 1px solid #0831d9;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  background: var(--xp-beige);
+  box-shadow: -3px -2px 8px rgba(0, 0, 0, 0.4);
+  color: #000;
+  font-size: 11px;
+}
+
+.clock-menu-title {
+  height: 28px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, #1c5fe0 0%, #3a82f0 12%, #2d6fe3 50%, #1f55c8 100%);
+  color: #fff;
+  font: 700 13px var(--font-title);
+  text-shadow: 1px 1px 1px #0f1089;
+}
+
+.clock-menu-body {
+  padding: 10px 12px 12px;
+}
+
+.clock-menu-date {
+  margin: 0;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.clock-menu-hint {
+  margin: 2px 0 10px;
+  color: #555;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+/* An XP push button. */
+.xp-button {
+  border: 1px solid #003c74;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #fff 0%, #f4f3ee 60%, #ddd9ca 100%);
+  color: #000;
+  font: 11px var(--font-ui);
+  cursor: default;
+}
+
+.xp-button:hover {
+  box-shadow: inset 0 0 0 2px #f9c866;
+}
+
+.xp-button:focus-visible {
+  outline: 1px dotted #000;
+  outline-offset: -4px;
+}
+
+.xp-button.selected {
+  border-color: #1a3f87;
+  background: var(--xp-select);
+  color: #fff;
+  box-shadow: none;
+}
+
+.theme-button {
+  padding: 5px 6px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-align: left;
+}
+
+.theme-swatch {
+  flex: none;
+  width: 26px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+}
+
+.theme-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.theme-text i {
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.theme-text small {
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.theme-auto {
+  width: 100%;
+  margin-top: 8px;
+  padding: 5px 8px;
+}
+
+/* ---------- Start menu ---------- */
+
+.start-menu {
+  position: absolute;
+  left: 0;
+  bottom: var(--taskbar-h);
+  width: 380px;
+  max-width: 100vw;
+  max-height: calc(100vh - var(--taskbar-h));
+  max-height: calc(100dvh - var(--taskbar-h));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #0831d9;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  background: #fff;
+  box-shadow: 3px -2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.start-header {
+  flex: none;
+  height: 56px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(to bottom, #1c5fe0 0%, #3a82f0 12%, #2d6fe3 50%, #1f55c8 100%);
+  box-shadow: inset 0 -2px 0 #f58a2c;
+}
+
+.start-avatar {
+  flex: none;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+.start-username {
+  color: #fff;
+  font: 700 16px var(--font-title);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.start-body {
+  display: flex;
+  min-height: 150px;
+  overflow-y: auto;
+}
+
+.start-col {
+  margin: 0;
+  padding: 6px 4px;
+  list-style: none;
+}
+
+.start-col-left {
+  flex: 1 1 55%;
+  background: #fff;
+}
+
+.start-col-right {
+  flex: 1 1 45%;
+  border-left: 1px solid #a9c3ee;
+  background: #d3e5fa;
+}
+
+.start-item {
+  width: 100%;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: none;
+  font-size: 12px;
+  text-align: left;
+  cursor: default;
+}
+
+.start-item-big {
+  padding: 6px;
+  font-weight: 700;
+}
+
+.start-item:hover,
+.start-item:focus-visible {
+  outline: none;
+  background: var(--xp-select);
+  color: #fff;
+}
+
+.start-footer {
+  flex: none;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  background: linear-gradient(to bottom, #3a7be6 0%, #2a63d0 100%);
+}
+
+.start-power {
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  border-radius: 3px;
+  background: none;
+  color: #fff;
+  font-size: 11px;
+  cursor: default;
+}
+
+.start-power:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.power-glyph {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+.power-glyph-logoff {
+  background: linear-gradient(to bottom, #f8c451, #d98a12);
+}
+
+.power-glyph-off {
+  background: linear-gradient(to bottom, #ee7a52, #c93d12);
+}
+
+/* ---------- Small screens and touch ---------- */
+
+/*
+ * Two separate questions, so two kinds of query. Apps' own stylesheets use the same two, so a new app only has to
+ * follow them to work on every phone:
+ *
+ *   Is the screen small?  (max-width: 700px)   The layout changes: windows fill the screen, the icons form a grid,
+ *                                              side-by-side panes stack. Written with plain flex/grid and
+ *                                              min()/minmax() so it holds at any width from 320px up.
+ *   Is it touched?        (pointer: coarse)    Targets get finger-sized and text inputs stop triggering the
+ *                                              browser's zoom. A big touch screen (a tablet) keeps the desktop layout.
+ *
+ * A phone held sideways is wide but short, so it counts as small for windows too: that is the COMPACT_QUERY in
+ * src/os/windows.tsx, which must match the condition below.
+ */
+
+@media (max-width: 700px), (pointer: coarse) and (max-height: 500px) {
+  /* Every window fills the space above the taskbar. (!important beats the position a floating window carries inline.) */
+  .desktop > .window {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0;
+    bottom: var(--taskbar-h);
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .desktop > .window .titlebar {
+    border-radius: 0;
+  }
+
+  /* Nothing to drag, resize or maximize. */
+  .desktop > .window .resize,
+  .desktop > .window .tb-maximize {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  /* The desktop icons become a grid that reads left to right and fills whatever width there is. */
+  .desktop-icons {
+    right: 0;
+    bottom: calc(var(--taskbar-h) + 84px); /* the Recycle Bin sits in the corner below */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+    grid-auto-rows: max-content;
+    align-content: start;
+    justify-items: center;
+    gap: 6px 0;
+    padding: 10px 4px 8px;
+    overflow-y: auto;
+  }
+
+  .start-menu {
+    width: 100vw;
+    border-radius: 0;
+  }
+
+  .tray {
+    padding: 0 8px;
+  }
+
+  .clock-menu {
+    width: 100vw;
+    border-radius: 0;
+  }
+
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Taskbar buttons show just the icon, and squeeze together rather than run off the edge. */
+  .task-button span {
+    display: none;
+  }
+
+  .task-button {
+    flex: 0 1 40px;
+    min-width: 24px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .app-page {
+    padding: 14px 16px;
+  }
+
+  .app-page h1 {
+    font-size: 19px;
+  }
+}
+
+@media (pointer: coarse) {
+  .titlebar {
+    height: 36px;
+  }
+
+  .tb-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .tb-btn svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Wider edges to grab, for the windows a tablet still floats. */
+  .resize-n,
+  .resize-s {
+    height: 16px;
+  }
+
+  .resize-e,
+  .resize-w {
+    width: 16px;
+  }
+
+  .resize-ne,
+  .resize-nw,
+  .resize-se,
+  .resize-sw {
+    width: 26px;
+    height: 26px;
+  }
+
+  .resize-n {
+    top: -8px;
+  }
+
+  .resize-s {
+    bottom: -8px;
+  }
+
+  .resize-e {
+    right: -8px;
+  }
+
+  .resize-w {
+    left: -8px;
+  }
+
+  .resize-ne {
+    top: -8px;
+    right: -8px;
+  }
+
+  .resize-nw {
+    top: -8px;
+    left: -8px;
+  }
+
+  .resize-se {
+    bottom: -8px;
+    right: -8px;
+  }
+
+  .resize-sw {
+    bottom: -8px;
+    left: -8px;
+  }
+
+  .start-item {
+    padding-block: 7px;
+  }
+
+  .start-power {
+    padding: 8px;
+  }
+
+  .theme-button {
+    padding-block: 9px;
+  }
+
+  .xp-button {
+    min-height: 30px;
+  }
+
+  /* 16px or larger, or iOS zooms the page in whenever a field is focused. (!important beats each app's own field style.) */
+  input:not([type='checkbox'], [type='radio'], [type='range']),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ---------- The "Logging off..." dialog ---------- */
+
+.logoff-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000; /* above the taskbar */
+  display: grid;
+  place-items: center;
+  background: rgba(0, 16, 70, 0.5);
+  cursor: progress;
+}
+
+.logoff-dialog {
+  position: relative;
+  width: min(330px, calc(100vw - 32px));
+}
+
+.logoff-content {
+  background: var(--xp-beige);
+}
+
+.logoff-body {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 18px 12px;
+}
+
+.logoff-body strong {
+  display: block;
+  font: 700 14px var(--font-title);
+}
+
+.logoff-body p {
+  margin: 2px 0 0;
+  color: #444;
+}
+
+.logoff-progress {
+  margin: 0 18px 16px;
+  height: 14px;
+  overflow: hidden;
+  border: 1px solid #7f9db9;
+  background: #fff;
+}
+
+/* XP's marquee: three green blocks that keep travelling across the bar. */
+.logoff-progress i {
+  display: block;
+  width: 46px;
+  height: 100%;
+  background: repeating-linear-gradient(to right, #2fb12f 0 12px, transparent 12px 15px);
+  animation: logoff-slide 1.4s linear infinite;
+}
+
+@keyframes logoff-slide {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(340px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoff-progress i {
+    animation: none;
+    transform: translateX(120px);
+  }
+}
+
+/* ---------- Waiting: the site-wide spinner (see src/os/Spinner.tsx) ---------- */
+
+/* A ring with one blue quarter that turns. Every wait on the site uses this. */
+.xp-spin {
+  display: inline-block;
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #c6d6f2;
+  border-top-color: #316ac5;
+  border-radius: 50%;
+  animation: xp-turn 0.8s linear infinite;
+}
+
+.xp-wait {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Centred in whatever it is waiting for, with a larger ring. */
+.xp-wait.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 80px;
+  color: #555;
+  text-align: center;
+}
+
+.xp-wait.block .xp-spin {
+  width: 22px;
+  height: 22px;
+  border-width: 3px;
+}
+
+/* The spinner an image shows in the middle of its frame while it loads. */
+.xp-img-wait {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+@keyframes xp-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xp-spin {
+    animation-duration: 2.4s;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "personal-website",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-13",
+  "assets": {
+    "binding": "ASSETS",
+    // Unknown paths (e.g. /about) fall back to index.html so deep links open windows.
+    "not_found_handling": "single-page-application",
+    // Every request goes through the Worker first. It is the log-on gate: nothing from the built
+    // site is served until the visitor holds a session cookie (see worker/index.ts).
+    "run_worker_first": true
+  },
+  "vars": {
+    // Public. Replace with your real Turnstile widget's sitekey before deploying (local dev uses
+    // the dummy key from .dev.vars). The matching secret is NOT stored here: see .dev.vars.example.
+    "TURNSTILE_SITE_KEY": "REPLACE_WITH_YOUR_TURNSTILE_SITEKEY"
+  },
+  // Storage. D1 is the database (items, purchases); R2 holds the wishlist's pictures. Both are free at this
+  // size. Locally they run in memory-on-disk under .wrangler/ and need no setup beyond `npm run db:migrate`.
+  // Before deploying, create them and put the real id here (see "Going live" in the README):
+  //   npx wrangler d1 create tgos      then copy its database_id
+  //   npx wrangler r2 bucket create tgos-images
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tgos",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [{ "binding": "IMAGES", "bucket_name": "tgos-images" }],
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.1 }
+  }
+}

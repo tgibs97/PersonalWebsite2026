@@ -1,0 +1,553 @@
+/* The XP "Welcome" log-on screen. Standalone on purpose: it shares no code with the desktop bundle. */
+
+:root {
+  --font-ui: Tahoma, 'Segoe UI', Verdana, Geneva, sans-serif;
+  --font-title: 'Trebuchet MS', Tahoma, 'Segoe UI', sans-serif;
+  --font-brand: 'Franklin Gothic Medium', 'Franklin Gothic', 'Trebuchet MS', Tahoma, sans-serif;
+  --bar: #00309c;
+  --stage: #5a7edc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--stage);
+  color: #fff;
+  font: 12px/1.4 var(--font-ui);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+.logon {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Bars ---------- */
+
+.logon-top,
+.logon-bottom {
+  position: relative;
+  flex: none;
+  background: var(--bar);
+}
+
+.logon-top {
+  height: 78px;
+}
+
+.logon-top::after,
+.logon-bottom::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.logon-top::after {
+  bottom: 0;
+  background: linear-gradient(to right, rgba(142, 178, 255, 0), #8eb2ff 50%, rgba(142, 178, 255, 0));
+}
+
+.logon-bottom::before {
+  top: 0;
+  background: linear-gradient(to right, rgba(244, 165, 74, 0), #f4a54a 50%, rgba(244, 165, 74, 0));
+}
+
+.logon-bottom {
+  min-height: 96px;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.turn-off {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  font: 18px var(--font-title);
+  cursor: pointer;
+}
+
+.turn-off:hover,
+.turn-off:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  outline: none;
+}
+
+.power {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  background: linear-gradient(to bottom, #ee7a52, #c93d12);
+}
+
+.bottom-note {
+  margin: 0;
+  max-width: 340px;
+  text-align: right;
+  color: #dbe6ff;
+  font-size: 12px;
+}
+
+/* ---------- Stage ---------- */
+
+.logon-stage {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: radial-gradient(ellipse at 18% 0%, #7c9cee 0%, var(--stage) 55%, #4e72d4 100%);
+}
+
+.logon-brand {
+  padding: 32px 48px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+  border-right: 1px solid;
+  border-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0)) 1;
+}
+
+/* The tgOS lockup (mark + wordmark) is an inline SVG with outlined lettering: see design/logo-build. */
+.brand-title {
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: min(100%, 290px);
+  height: auto;
+}
+
+.brand-hint {
+  margin: 20px 0 0;
+  font: 20px var(--font-title);
+}
+
+.logon-users {
+  padding: 32px 24px 32px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.avatar {
+  flex: none;
+  width: 58px;
+  height: 58px;
+  filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.35));
+}
+
+.user-name {
+  font: 22px var(--font-title);
+}
+
+.user-tile {
+  width: 100%;
+  max-width: 340px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.user-tile:hover,
+.user-tile:focus-visible {
+  background: rgba(0, 36, 140, 0.45);
+  outline: none;
+}
+
+.user-tile:focus-visible {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.user-card {
+  display: none;
+  width: 100%;
+  max-width: 372px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: rgba(0, 36, 140, 0.5);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.card-prompt {
+  margin: 2px 0 0;
+  color: #dbe6ff;
+}
+
+.widget {
+  min-height: 65px;
+}
+
+.card-status {
+  min-height: 1.4em;
+  margin: 8px 0 0;
+  color: #dbe6ff;
+}
+
+.card-status .spin {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 7px;
+  vertical-align: -2px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin-turn 0.8s linear infinite;
+}
+
+@keyframes spin-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* An XP balloon tip, for errors. */
+.balloon {
+  display: none;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background: #ffffe1;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+  color: #000;
+  font-size: 11px;
+}
+
+.balloon[data-visible='true'] {
+  display: block;
+}
+
+.balloon strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.balloon strong::before {
+  content: '\00d7';
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #d02a1a;
+  color: #fff;
+  font: 700 13px/1 var(--font-ui);
+}
+
+.balloon p {
+  margin: 4px 0 0 22px;
+}
+
+/* ---------- States ---------- */
+
+[data-state='challenge'] .user-tile,
+[data-state='verifying'] .user-tile,
+[data-state='password'] .user-tile {
+  display: none;
+}
+
+[data-state='challenge'] .user-card,
+[data-state='verifying'] .user-card,
+[data-state='password'] .user-card {
+  display: block;
+}
+
+.logon-welcome {
+  display: none;
+}
+
+[data-state='welcome'] .logon-stage {
+  display: none;
+}
+
+[data-state='welcome'] .logon-welcome {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse at 18% 0%, #7c9cee 0%, var(--stage) 55%, #4e72d4 100%);
+  font: italic 400 clamp(40px, 9vw, 64px) var(--font-brand);
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.35);
+  animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-state='welcome'] .logon-welcome {
+    animation: none;
+  }
+}
+
+.power-off {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  background: #000;
+  color: #ff3b30;
+}
+
+.power-off[hidden] {
+  display: none;
+}
+
+/* The round power button on the "switched off" screen: it pulses slowly red, like a standby light. */
+.power-button {
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 3px solid rgba(255, 59, 48, 0.55);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #2a1210, #0a0606 72%);
+  color: #ff3b30;
+  box-shadow: 0 0 12px rgba(255, 59, 48, 0.2), inset 0 0 8px rgba(255, 59, 48, 0.1);
+  cursor: pointer;
+  animation: standby-pulse 3.6s ease-in-out infinite;
+}
+
+.power-button:hover {
+  color: #ff6a5e;
+  border-color: #ff6a5e;
+  animation: none;
+  box-shadow: 0 0 28px rgba(255, 59, 48, 0.65), inset 0 0 14px rgba(255, 59, 48, 0.28);
+}
+
+.power-button:active {
+  transform: scale(0.96);
+}
+
+.power-button:focus-visible {
+  outline: 2px dotted #fff;
+  outline-offset: 5px;
+}
+
+@keyframes standby-pulse {
+  50% {
+    border-color: rgba(255, 59, 48, 1);
+    color: #ff5a4f;
+    box-shadow: 0 0 30px rgba(255, 59, 48, 0.6), inset 0 0 14px rgba(255, 59, 48, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .power-button {
+    animation: none;
+  }
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 720px) {
+  .logon-top {
+    height: 44px;
+  }
+
+  .logon-stage {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .logon-brand {
+    padding: 24px 16px 20px;
+    align-items: center;
+    text-align: center;
+    border-right: 0;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0)) 1;
+  }
+
+  .brand-logo {
+    width: min(100%, 210px);
+  }
+
+  .brand-hint {
+    margin-top: 10px;
+    font-size: 17px;
+  }
+
+  .logon-users {
+    padding: 20px 12px;
+    align-items: center;
+  }
+
+  .user-card {
+    padding: 12px;
+  }
+
+  .logon-bottom {
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .bottom-note {
+    max-width: none;
+    text-align: left;
+  }
+}
+
+/* ---------- Several users ---------- */
+
+.logon-users {
+  gap: 4px;
+}
+
+.card-back {
+  margin-top: 8px;
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  color: #dbe6ff;
+  font: 12px var(--font-ui);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.card-back:hover,
+.card-back:focus-visible {
+  color: #fff;
+}
+
+[data-state='verifying'] .card-back {
+  visibility: hidden;
+}
+
+/* ---------- Password step ---------- */
+
+/* Once the bot check passes, the widget gives way to the password box (and stays hidden while it is checked). */
+.password-form {
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+
+.logon[data-step='password'] .password-form {
+  display: flex;
+}
+
+.logon[data-step='password'] .widget {
+  display: none;
+}
+
+.logon[data-step='password'][data-state='verifying'] .password-form {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.password-input {
+  flex: 1;
+  min-width: 0;
+  max-width: 240px;
+  padding: 5px 7px;
+  border: 1px solid #7f9db9;
+  border-radius: 3px;
+  background: #fff;
+  color: #000;
+  font: 14px var(--font-ui);
+}
+
+.password-input:focus {
+  outline: 2px solid #f4a54a;
+  outline-offset: 0;
+}
+
+/* XP's green "go" arrow. */
+.password-go {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #6ac56a, #2f8d2f 55%, #1e6c1e);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.password-go:hover {
+  filter: brightness(1.1);
+}
+
+/* ---------- No flash on load ---------- */
+
+/* login.html hides the page until this stylesheet has loaded; this shows it. */
+html body {
+  opacity: 1;
+  animation: none;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+/* ---------- Touch ---------- */
+
+@media (pointer: coarse) {
+  /* 16px or larger, or iOS zooms the page in when the box is focused. */
+  .password-input {
+    font-size: 16px;
+  }
+
+  .password-go {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Keep the bottom bar's text clear of a phone's home indicator (viewport-fit=cover in login.html). */
+.logon-bottom {
+  padding-bottom: max(12px, env(safe-area-inset-bottom, 0px));
+}

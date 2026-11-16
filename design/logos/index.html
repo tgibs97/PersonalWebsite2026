@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tgOS logo options</title>
+<style>
+  :root { --ui: Tahoma, 'Segoe UI', Verdana, sans-serif; --title: 'Trebuchet MS', Tahoma, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 28px 20px 48px; background: #ece9d8; color: #1b2a4a; font: 13px/1.5 var(--ui); }
+  header { max-width: 980px; margin: 0 auto 22px; }
+  h1 { margin: 0 0 4px; font: 700 26px var(--title); color: #0b3a9e; }
+  header p { margin: 0; color: #4a5878; }
+  .grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 18px; }
+  .card { padding: 16px; background: #fff; border: 1px solid #c3cbe0; border-radius: 10px; box-shadow: 0 1px 3px rgba(11,58,158,.12); }
+  h2 { margin: 0 0 4px; font: 700 18px var(--title); color: #0b3a9e; }
+  .n { display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 4px; border-radius: 50%; background: #0054e3; color: #fff; font-size: 13px; vertical-align: 2px; }
+  .card p { margin: 0 0 12px; color: #4a5878; min-height: 3em; }
+  .login { padding: 22px 18px; border-radius: 8px; background: radial-gradient(ellipse at 18% 0%, #7c9cee 0%, #5a7edc 55%, #4e72d4 100%); }
+  .login svg { display: block; width: 100%; max-width: 340px; margin: 0 auto; height: auto; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .sizes { display: flex; align-items: flex-end; justify-content: space-around; padding: 12px 8px 8px; border-radius: 8px; }
+  .on-white { background: #f4f6fb; border: 1px solid #dde3f0; }
+  .on-bar { background: linear-gradient(to bottom, #3682e5, #245ddb 40%, #1d4ec0); }
+  figure { margin: 0; text-align: center; }
+  figcaption { margin-top: 4px; font-size: 10px; color: #6b7894; }
+  .on-bar figcaption { color: #cfe0ff; }
+  svg { overflow: visible; }
+</style>
+</head>
+<body>
+<header>
+  <h1>tgOS logo options</h1>
+  <p>Each option shows the full lockup on the log-on screen's blue, then the standalone mark at favicon and taskbar sizes on light and Start-bar backgrounds.</p>
+</header>
+<main class="grid">
+
+    <article class="card">
+      <h2><span class="n">1</span> Luna Orb</h2>
+      <p>A glossy blue sphere with a green Start-button glow along the bottom. The wordmark borrows the XP trick of one white word and one orange one.</p>
+      <div class="login"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><defs>
+<radialGradient id="orb1-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="orb1-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="orb1-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".8"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="orb1-clip"><circle cx="48" cy="45" r="39.5"/></clipPath>
+<filter id="orb1-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity="0.5"/></filter><filter id="orb1-tshadow" x="-10%" y="-20%" width="130%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="1.5" flood-color="#021a66" flood-opacity=".5"/></filter></defs>
+<g filter="url(#orb1-shadow)"><circle cx="48" cy="45" r="41" fill="url(#orb1-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="45" r="43" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#orb1-clip)">
+<rect x="0" y="50" width="96" height="46" fill="url(#orb1-glow)"/>
+<ellipse cx="48" cy="23" rx="31" ry="18" fill="url(#orb1-gloss)" opacity=".85"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="44" text-anchor="middle">
+<text x="49.5" y="62" fill="#052a86" opacity=".55">tg</text>
+<text x="48" y="60" fill="#fff">tg</text>
+</g><text x="104" y="63" font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="60" filter="url(#orb1-tshadow)"><tspan fill="#fff">tg</tspan><tspan fill="#ffb13b">OS</tspan></text></svg></div>
+      <div class="rows"><div class="sizes on-white"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="orb2-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="orb2-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="orb2-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".8"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="orb2-clip"><circle cx="48" cy="45" r="39.5"/></clipPath>
+<filter id="orb2-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#orb2-shadow)"><circle cx="48" cy="45" r="41" fill="url(#orb2-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="45" r="43" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#orb2-clip)">
+<rect x="0" y="50" width="96" height="46" fill="url(#orb2-glow)"/>
+<ellipse cx="48" cy="23" rx="31" ry="18" fill="url(#orb2-gloss)" opacity=".85"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="44" text-anchor="middle">
+<text x="49.5" y="62" fill="#052a86" opacity=".55">tg</text>
+<text x="48" y="60" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="orb3-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="orb3-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="orb3-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".8"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="orb3-clip"><circle cx="48" cy="45" r="39.5"/></clipPath>
+<filter id="orb3-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#orb3-shadow)"><circle cx="48" cy="45" r="41" fill="url(#orb3-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="45" r="43" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#orb3-clip)">
+<rect x="0" y="50" width="96" height="46" fill="url(#orb3-glow)"/>
+<ellipse cx="48" cy="23" rx="31" ry="18" fill="url(#orb3-gloss)" opacity=".85"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="44" text-anchor="middle">
+<text x="49.5" y="62" fill="#052a86" opacity=".55">tg</text>
+<text x="48" y="60" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="orb4-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="orb4-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="orb4-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".8"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="orb4-clip"><circle cx="48" cy="45" r="39.5"/></clipPath>
+<filter id="orb4-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#orb4-shadow)"><circle cx="48" cy="45" r="41" fill="url(#orb4-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="45" r="43" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#orb4-clip)">
+<rect x="0" y="50" width="96" height="46" fill="url(#orb4-glow)"/>
+<ellipse cx="48" cy="23" rx="31" ry="18" fill="url(#orb4-gloss)" opacity=".85"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="44" text-anchor="middle">
+<text x="49.5" y="62" fill="#052a86" opacity=".55">tg</text>
+<text x="48" y="60" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div><div class="sizes on-bar"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<radialGradient id="orb5-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="orb5-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="orb5-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".8"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="orb5-clip"><circle cx="48" cy="45" r="39.5"/></clipPath>
+<filter id="orb5-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#orb5-shadow)"><circle cx="48" cy="45" r="41" fill="url(#orb5-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="45" r="43" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#orb5-clip)">
+<rect x="0" y="50" width="96" height="46" fill="url(#orb5-glow)"/>
+<ellipse cx="48" cy="23" rx="31" ry="18" fill="url(#orb5-gloss)" opacity=".85"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="44" text-anchor="middle">
+<text x="49.5" y="62" fill="#052a86" opacity=".55">tg</text>
+<text x="48" y="60" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<radialGradient id="orb6-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="orb6-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="orb6-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".8"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="orb6-clip"><circle cx="48" cy="45" r="39.5"/></clipPath>
+<filter id="orb6-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#orb6-shadow)"><circle cx="48" cy="45" r="41" fill="url(#orb6-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="45" r="43" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#orb6-clip)">
+<rect x="0" y="50" width="96" height="46" fill="url(#orb6-glow)"/>
+<ellipse cx="48" cy="23" rx="31" ry="18" fill="url(#orb6-gloss)" opacity=".85"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="44" text-anchor="middle">
+<text x="49.5" y="62" fill="#052a86" opacity=".55">tg</text>
+<text x="48" y="60" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<radialGradient id="orb7-body" cx=".5" cy=".3" r=".8">
+<stop offset="0" stop-color="#9fd0ff"/><stop offset=".4" stop-color="#3b86f2"/>
+<stop offset=".8" stop-color="#1250d4"/><stop offset="1" stop-color="#0a37ad"/>
+</radialGradient>
+<linearGradient id="orb7-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="orb7-glow" cx=".5" cy="1" r=".7">
+<stop offset="0" stop-color="#7dff7d" stop-opacity=".8"/><stop offset="1" stop-color="#7dff7d" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="orb7-clip"><circle cx="48" cy="45" r="39.5"/></clipPath>
+<filter id="orb7-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#orb7-shadow)"><circle cx="48" cy="45" r="41" fill="url(#orb7-body)" stroke="#fff" stroke-width="3"/></g>
+<circle cx="48" cy="45" r="43" fill="none" stroke="#0831d9" stroke-width="1"/>
+<g clip-path="url(#orb7-clip)">
+<rect x="0" y="50" width="96" height="46" fill="url(#orb7-glow)"/>
+<ellipse cx="48" cy="23" rx="31" ry="18" fill="url(#orb7-gloss)" opacity=".85"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="44" text-anchor="middle">
+<text x="49.5" y="62" fill="#052a86" opacity=".55">tg</text>
+<text x="48" y="60" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div></div>
+    </article>
+
+    <article class="card">
+      <h2><span class="n">2</span> Bliss Tile</h2>
+      <p>A tile showing our own hillside from the wallpaper, so the logo and the desktop look like one family. Reads well even at favicon size.</p>
+      <div class="login"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><defs>
+<linearGradient id="bliss8-sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0a47cf"/><stop offset=".55" stop-color="#3a8bf0"/><stop offset="1" stop-color="#b9dcfb"/>
+</linearGradient>
+<linearGradient id="bliss8-hill" x1=".15" y1="0" x2=".85" y2="1">
+<stop offset="0" stop-color="#8ad04a"/><stop offset=".5" stop-color="#3f9a1f"/><stop offset="1" stop-color="#1a5f0b"/>
+</linearGradient>
+<linearGradient id="bliss8-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="bliss8-clip"><rect x="7" y="6" width="82" height="82" rx="10"/></clipPath>
+<filter id="bliss8-blur" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="1.3"/></filter>
+<filter id="bliss8-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.45"/></filter><filter id="bliss8-tshadow" x="-10%" y="-20%" width="130%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="1.5" flood-color="#021a66" flood-opacity=".5"/></filter></defs>
+<g filter="url(#bliss8-shadow)"><rect x="4" y="3" width="88" height="88" rx="13" fill="#fff"/></g>
+<rect x="4" y="3" width="88" height="88" rx="13" fill="none" stroke="#9fb0cf"/>
+<g clip-path="url(#bliss8-clip)">
+<rect width="96" height="96" fill="url(#bliss8-sky)"/>
+<g fill="#fff" filter="url(#bliss8-blur)" opacity=".95">
+<ellipse cx="30" cy="22" rx="15" ry="5.5"/><ellipse cx="21" cy="25" rx="9" ry="4.5"/><ellipse cx="41" cy="25" rx="10" ry="4"/>
+<ellipse cx="71" cy="16" rx="13" ry="4.5"/><ellipse cx="64" cy="19" rx="8" ry="3.5"/>
+</g>
+<path d="M0 58C20 44 46 40 70 48C82 52 90 56 96 60V96H0Z" fill="url(#bliss8-hill)"/>
+<path d="M0 80C30 72 62 72 96 80V96H0Z" fill="#4eb024" opacity=".9"/>
+<path d="M0 0H96V36C70 44 26 44 0 36Z" fill="url(#bliss8-gloss)"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="76" fill="#0e4a05" opacity=".6">tg</text>
+<text x="48" y="74" fill="#fff">tg</text>
+</g><text x="104" y="63" font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="60" filter="url(#bliss8-tshadow)"><tspan fill="#fff">tg</tspan><tspan fill="#c4f58a">OS</tspan></text></svg></div>
+      <div class="rows"><div class="sizes on-white"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<linearGradient id="bliss9-sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0a47cf"/><stop offset=".55" stop-color="#3a8bf0"/><stop offset="1" stop-color="#b9dcfb"/>
+</linearGradient>
+<linearGradient id="bliss9-hill" x1=".15" y1="0" x2=".85" y2="1">
+<stop offset="0" stop-color="#8ad04a"/><stop offset=".5" stop-color="#3f9a1f"/><stop offset="1" stop-color="#1a5f0b"/>
+</linearGradient>
+<linearGradient id="bliss9-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="bliss9-clip"><rect x="7" y="6" width="82" height="82" rx="10"/></clipPath>
+<filter id="bliss9-blur" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="1.3"/></filter>
+<filter id="bliss9-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#bliss9-shadow)"><rect x="4" y="3" width="88" height="88" rx="13" fill="#fff"/></g>
+<rect x="4" y="3" width="88" height="88" rx="13" fill="none" stroke="#9fb0cf"/>
+<g clip-path="url(#bliss9-clip)">
+<rect width="96" height="96" fill="url(#bliss9-sky)"/>
+<g fill="#fff" filter="url(#bliss9-blur)" opacity=".95">
+<ellipse cx="30" cy="22" rx="15" ry="5.5"/><ellipse cx="21" cy="25" rx="9" ry="4.5"/><ellipse cx="41" cy="25" rx="10" ry="4"/>
+<ellipse cx="71" cy="16" rx="13" ry="4.5"/><ellipse cx="64" cy="19" rx="8" ry="3.5"/>
+</g>
+<path d="M0 58C20 44 46 40 70 48C82 52 90 56 96 60V96H0Z" fill="url(#bliss9-hill)"/>
+<path d="M0 80C30 72 62 72 96 80V96H0Z" fill="#4eb024" opacity=".9"/>
+<path d="M0 0H96V36C70 44 26 44 0 36Z" fill="url(#bliss9-gloss)"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="76" fill="#0e4a05" opacity=".6">tg</text>
+<text x="48" y="74" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<linearGradient id="bliss10-sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0a47cf"/><stop offset=".55" stop-color="#3a8bf0"/><stop offset="1" stop-color="#b9dcfb"/>
+</linearGradient>
+<linearGradient id="bliss10-hill" x1=".15" y1="0" x2=".85" y2="1">
+<stop offset="0" stop-color="#8ad04a"/><stop offset=".5" stop-color="#3f9a1f"/><stop offset="1" stop-color="#1a5f0b"/>
+</linearGradient>
+<linearGradient id="bliss10-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="bliss10-clip"><rect x="7" y="6" width="82" height="82" rx="10"/></clipPath>
+<filter id="bliss10-blur" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="1.3"/></filter>
+<filter id="bliss10-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#bliss10-shadow)"><rect x="4" y="3" width="88" height="88" rx="13" fill="#fff"/></g>
+<rect x="4" y="3" width="88" height="88" rx="13" fill="none" stroke="#9fb0cf"/>
+<g clip-path="url(#bliss10-clip)">
+<rect width="96" height="96" fill="url(#bliss10-sky)"/>
+<g fill="#fff" filter="url(#bliss10-blur)" opacity=".95">
+<ellipse cx="30" cy="22" rx="15" ry="5.5"/><ellipse cx="21" cy="25" rx="9" ry="4.5"/><ellipse cx="41" cy="25" rx="10" ry="4"/>
+<ellipse cx="71" cy="16" rx="13" ry="4.5"/><ellipse cx="64" cy="19" rx="8" ry="3.5"/>
+</g>
+<path d="M0 58C20 44 46 40 70 48C82 52 90 56 96 60V96H0Z" fill="url(#bliss10-hill)"/>
+<path d="M0 80C30 72 62 72 96 80V96H0Z" fill="#4eb024" opacity=".9"/>
+<path d="M0 0H96V36C70 44 26 44 0 36Z" fill="url(#bliss10-gloss)"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="76" fill="#0e4a05" opacity=".6">tg</text>
+<text x="48" y="74" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<linearGradient id="bliss11-sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0a47cf"/><stop offset=".55" stop-color="#3a8bf0"/><stop offset="1" stop-color="#b9dcfb"/>
+</linearGradient>
+<linearGradient id="bliss11-hill" x1=".15" y1="0" x2=".85" y2="1">
+<stop offset="0" stop-color="#8ad04a"/><stop offset=".5" stop-color="#3f9a1f"/><stop offset="1" stop-color="#1a5f0b"/>
+</linearGradient>
+<linearGradient id="bliss11-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="bliss11-clip"><rect x="7" y="6" width="82" height="82" rx="10"/></clipPath>
+<filter id="bliss11-blur" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="1.3"/></filter>
+<filter id="bliss11-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#bliss11-shadow)"><rect x="4" y="3" width="88" height="88" rx="13" fill="#fff"/></g>
+<rect x="4" y="3" width="88" height="88" rx="13" fill="none" stroke="#9fb0cf"/>
+<g clip-path="url(#bliss11-clip)">
+<rect width="96" height="96" fill="url(#bliss11-sky)"/>
+<g fill="#fff" filter="url(#bliss11-blur)" opacity=".95">
+<ellipse cx="30" cy="22" rx="15" ry="5.5"/><ellipse cx="21" cy="25" rx="9" ry="4.5"/><ellipse cx="41" cy="25" rx="10" ry="4"/>
+<ellipse cx="71" cy="16" rx="13" ry="4.5"/><ellipse cx="64" cy="19" rx="8" ry="3.5"/>
+</g>
+<path d="M0 58C20 44 46 40 70 48C82 52 90 56 96 60V96H0Z" fill="url(#bliss11-hill)"/>
+<path d="M0 80C30 72 62 72 96 80V96H0Z" fill="#4eb024" opacity=".9"/>
+<path d="M0 0H96V36C70 44 26 44 0 36Z" fill="url(#bliss11-gloss)"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="76" fill="#0e4a05" opacity=".6">tg</text>
+<text x="48" y="74" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div><div class="sizes on-bar"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<linearGradient id="bliss12-sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0a47cf"/><stop offset=".55" stop-color="#3a8bf0"/><stop offset="1" stop-color="#b9dcfb"/>
+</linearGradient>
+<linearGradient id="bliss12-hill" x1=".15" y1="0" x2=".85" y2="1">
+<stop offset="0" stop-color="#8ad04a"/><stop offset=".5" stop-color="#3f9a1f"/><stop offset="1" stop-color="#1a5f0b"/>
+</linearGradient>
+<linearGradient id="bliss12-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="bliss12-clip"><rect x="7" y="6" width="82" height="82" rx="10"/></clipPath>
+<filter id="bliss12-blur" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="1.3"/></filter>
+<filter id="bliss12-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#bliss12-shadow)"><rect x="4" y="3" width="88" height="88" rx="13" fill="#fff"/></g>
+<rect x="4" y="3" width="88" height="88" rx="13" fill="none" stroke="#9fb0cf"/>
+<g clip-path="url(#bliss12-clip)">
+<rect width="96" height="96" fill="url(#bliss12-sky)"/>
+<g fill="#fff" filter="url(#bliss12-blur)" opacity=".95">
+<ellipse cx="30" cy="22" rx="15" ry="5.5"/><ellipse cx="21" cy="25" rx="9" ry="4.5"/><ellipse cx="41" cy="25" rx="10" ry="4"/>
+<ellipse cx="71" cy="16" rx="13" ry="4.5"/><ellipse cx="64" cy="19" rx="8" ry="3.5"/>
+</g>
+<path d="M0 58C20 44 46 40 70 48C82 52 90 56 96 60V96H0Z" fill="url(#bliss12-hill)"/>
+<path d="M0 80C30 72 62 72 96 80V96H0Z" fill="#4eb024" opacity=".9"/>
+<path d="M0 0H96V36C70 44 26 44 0 36Z" fill="url(#bliss12-gloss)"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="76" fill="#0e4a05" opacity=".6">tg</text>
+<text x="48" y="74" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<linearGradient id="bliss13-sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0a47cf"/><stop offset=".55" stop-color="#3a8bf0"/><stop offset="1" stop-color="#b9dcfb"/>
+</linearGradient>
+<linearGradient id="bliss13-hill" x1=".15" y1="0" x2=".85" y2="1">
+<stop offset="0" stop-color="#8ad04a"/><stop offset=".5" stop-color="#3f9a1f"/><stop offset="1" stop-color="#1a5f0b"/>
+</linearGradient>
+<linearGradient id="bliss13-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="bliss13-clip"><rect x="7" y="6" width="82" height="82" rx="10"/></clipPath>
+<filter id="bliss13-blur" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="1.3"/></filter>
+<filter id="bliss13-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#bliss13-shadow)"><rect x="4" y="3" width="88" height="88" rx="13" fill="#fff"/></g>
+<rect x="4" y="3" width="88" height="88" rx="13" fill="none" stroke="#9fb0cf"/>
+<g clip-path="url(#bliss13-clip)">
+<rect width="96" height="96" fill="url(#bliss13-sky)"/>
+<g fill="#fff" filter="url(#bliss13-blur)" opacity=".95">
+<ellipse cx="30" cy="22" rx="15" ry="5.5"/><ellipse cx="21" cy="25" rx="9" ry="4.5"/><ellipse cx="41" cy="25" rx="10" ry="4"/>
+<ellipse cx="71" cy="16" rx="13" ry="4.5"/><ellipse cx="64" cy="19" rx="8" ry="3.5"/>
+</g>
+<path d="M0 58C20 44 46 40 70 48C82 52 90 56 96 60V96H0Z" fill="url(#bliss13-hill)"/>
+<path d="M0 80C30 72 62 72 96 80V96H0Z" fill="#4eb024" opacity=".9"/>
+<path d="M0 0H96V36C70 44 26 44 0 36Z" fill="url(#bliss13-gloss)"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="76" fill="#0e4a05" opacity=".6">tg</text>
+<text x="48" y="74" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<linearGradient id="bliss14-sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0a47cf"/><stop offset=".55" stop-color="#3a8bf0"/><stop offset="1" stop-color="#b9dcfb"/>
+</linearGradient>
+<linearGradient id="bliss14-hill" x1=".15" y1="0" x2=".85" y2="1">
+<stop offset="0" stop-color="#8ad04a"/><stop offset=".5" stop-color="#3f9a1f"/><stop offset="1" stop-color="#1a5f0b"/>
+</linearGradient>
+<linearGradient id="bliss14-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="bliss14-clip"><rect x="7" y="6" width="82" height="82" rx="10"/></clipPath>
+<filter id="bliss14-blur" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="1.3"/></filter>
+<filter id="bliss14-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#bliss14-shadow)"><rect x="4" y="3" width="88" height="88" rx="13" fill="#fff"/></g>
+<rect x="4" y="3" width="88" height="88" rx="13" fill="none" stroke="#9fb0cf"/>
+<g clip-path="url(#bliss14-clip)">
+<rect width="96" height="96" fill="url(#bliss14-sky)"/>
+<g fill="#fff" filter="url(#bliss14-blur)" opacity=".95">
+<ellipse cx="30" cy="22" rx="15" ry="5.5"/><ellipse cx="21" cy="25" rx="9" ry="4.5"/><ellipse cx="41" cy="25" rx="10" ry="4"/>
+<ellipse cx="71" cy="16" rx="13" ry="4.5"/><ellipse cx="64" cy="19" rx="8" ry="3.5"/>
+</g>
+<path d="M0 58C20 44 46 40 70 48C82 52 90 56 96 60V96H0Z" fill="url(#bliss14-hill)"/>
+<path d="M0 80C30 72 62 72 96 80V96H0Z" fill="#4eb024" opacity=".9"/>
+<path d="M0 0H96V36C70 44 26 44 0 36Z" fill="url(#bliss14-gloss)"/>
+</g>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="40" text-anchor="middle">
+<text x="49.5" y="76" fill="#0e4a05" opacity=".6">tg</text>
+<text x="48" y="74" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div></div>
+    </article>
+
+    <article class="card">
+      <h2><span class="n">3</span> Little Window</h2>
+      <p>A miniature XP window: blue title bar, caption buttons, and the initials in the body. It is the most literal "OS" of the four.</p>
+      <div class="login"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><defs>
+<linearGradient id="window15-title" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0058ee"/><stop offset=".12" stop-color="#3593ff"/><stop offset=".3" stop-color="#0262ee"/>
+<stop offset=".6" stop-color="#0055eb"/><stop offset=".85" stop-color="#0062ef"/><stop offset="1" stop-color="#003092"/>
+</linearGradient>
+<linearGradient id="window15-btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa4ff"/><stop offset="1" stop-color="#1747c8"/></linearGradient>
+<linearGradient id="window15-close" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5946c"/><stop offset="1" stop-color="#c23c0e"/></linearGradient>
+<linearGradient id="window15-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e6e2cf"/></linearGradient>
+<filter id="window15-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.5"/></filter><filter id="window15-tshadow" x="-10%" y="-20%" width="130%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="1.5" flood-color="#021a66" flood-opacity=".5"/></filter><linearGradient id="window15-bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f58a2c"/><stop offset="1" stop-color="#f58a2c" stop-opacity="0"/></linearGradient></defs>
+<g filter="url(#window15-shadow)">
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V82H4Z" fill="#0831d9"/>
+</g>
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V32H4Z" fill="url(#window15-title)"/>
+<rect x="7" y="32" width="82" height="47" fill="url(#window15-body)"/>
+<text x="11" y="26" font-family="'Trebuchet MS',Tahoma,Arial,sans-serif" font-weight="700" font-size="10" fill="#fff">tgOS</text>
+<g stroke="#fff" stroke-width="1">
+<rect x="54.5" y="17.5" width="9" height="9" rx="2" fill="url(#window15-btn)"/>
+<rect x="65.5" y="17.5" width="9" height="9" rx="2" fill="url(#window15-btn)"/>
+<rect x="76.5" y="17.5" width="9" height="9" rx="2" fill="url(#window15-close)"/>
+</g>
+<path d="M57 24h4" stroke="#fff" stroke-width="1.8"/>
+<rect x="68" y="20" width="4.5" height="4.5" fill="none" stroke="#fff" stroke-width="1.1"/>
+<path d="M68 20h4.5" stroke="#fff" stroke-width="2"/>
+<path d="M79 20l4.5 4.500M83.5 20L79 24.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="35" text-anchor="middle">
+<text x="49" y="62" fill="#fff" opacity=".9">tg</text>
+<text x="48" y="61" fill="#0b3a9e">tg</text>
+</g>
+<rect x="24" y="72" width="48" height="3" rx="1.5" fill="#f58a2c"/><text x="104" y="60" font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="60" fill="#fff" filter="url(#window15-tshadow)">tgOS</text>
+<rect x="106" y="70" width="150" height="4" rx="2" fill="url(#window15-bar)"/></svg></div>
+      <div class="rows"><div class="sizes on-white"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<linearGradient id="window16-title" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0058ee"/><stop offset=".12" stop-color="#3593ff"/><stop offset=".3" stop-color="#0262ee"/>
+<stop offset=".6" stop-color="#0055eb"/><stop offset=".85" stop-color="#0062ef"/><stop offset="1" stop-color="#003092"/>
+</linearGradient>
+<linearGradient id="window16-btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa4ff"/><stop offset="1" stop-color="#1747c8"/></linearGradient>
+<linearGradient id="window16-close" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5946c"/><stop offset="1" stop-color="#c23c0e"/></linearGradient>
+<linearGradient id="window16-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e6e2cf"/></linearGradient>
+<filter id="window16-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#window16-shadow)">
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V82H4Z" fill="#0831d9"/>
+</g>
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V32H4Z" fill="url(#window16-title)"/>
+<rect x="7" y="32" width="82" height="47" fill="url(#window16-body)"/>
+<text x="11" y="26" font-family="'Trebuchet MS',Tahoma,Arial,sans-serif" font-weight="700" font-size="10" fill="#fff">tgOS</text>
+<g stroke="#fff" stroke-width="1">
+<rect x="54.5" y="17.5" width="9" height="9" rx="2" fill="url(#window16-btn)"/>
+<rect x="65.5" y="17.5" width="9" height="9" rx="2" fill="url(#window16-btn)"/>
+<rect x="76.5" y="17.5" width="9" height="9" rx="2" fill="url(#window16-close)"/>
+</g>
+<path d="M57 24h4" stroke="#fff" stroke-width="1.8"/>
+<rect x="68" y="20" width="4.5" height="4.5" fill="none" stroke="#fff" stroke-width="1.1"/>
+<path d="M68 20h4.5" stroke="#fff" stroke-width="2"/>
+<path d="M79 20l4.5 4.500M83.5 20L79 24.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="35" text-anchor="middle">
+<text x="49" y="62" fill="#fff" opacity=".9">tg</text>
+<text x="48" y="61" fill="#0b3a9e">tg</text>
+</g>
+<rect x="24" y="72" width="48" height="3" rx="1.5" fill="#f58a2c"/></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<linearGradient id="window17-title" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0058ee"/><stop offset=".12" stop-color="#3593ff"/><stop offset=".3" stop-color="#0262ee"/>
+<stop offset=".6" stop-color="#0055eb"/><stop offset=".85" stop-color="#0062ef"/><stop offset="1" stop-color="#003092"/>
+</linearGradient>
+<linearGradient id="window17-btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa4ff"/><stop offset="1" stop-color="#1747c8"/></linearGradient>
+<linearGradient id="window17-close" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5946c"/><stop offset="1" stop-color="#c23c0e"/></linearGradient>
+<linearGradient id="window17-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e6e2cf"/></linearGradient>
+<filter id="window17-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#window17-shadow)">
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V82H4Z" fill="#0831d9"/>
+</g>
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V32H4Z" fill="url(#window17-title)"/>
+<rect x="7" y="32" width="82" height="47" fill="url(#window17-body)"/>
+<text x="11" y="26" font-family="'Trebuchet MS',Tahoma,Arial,sans-serif" font-weight="700" font-size="10" fill="#fff">tgOS</text>
+<g stroke="#fff" stroke-width="1">
+<rect x="54.5" y="17.5" width="9" height="9" rx="2" fill="url(#window17-btn)"/>
+<rect x="65.5" y="17.5" width="9" height="9" rx="2" fill="url(#window17-btn)"/>
+<rect x="76.5" y="17.5" width="9" height="9" rx="2" fill="url(#window17-close)"/>
+</g>
+<path d="M57 24h4" stroke="#fff" stroke-width="1.8"/>
+<rect x="68" y="20" width="4.5" height="4.5" fill="none" stroke="#fff" stroke-width="1.1"/>
+<path d="M68 20h4.5" stroke="#fff" stroke-width="2"/>
+<path d="M79 20l4.5 4.500M83.5 20L79 24.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="35" text-anchor="middle">
+<text x="49" y="62" fill="#fff" opacity=".9">tg</text>
+<text x="48" y="61" fill="#0b3a9e">tg</text>
+</g>
+<rect x="24" y="72" width="48" height="3" rx="1.5" fill="#f58a2c"/></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<linearGradient id="window18-title" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0058ee"/><stop offset=".12" stop-color="#3593ff"/><stop offset=".3" stop-color="#0262ee"/>
+<stop offset=".6" stop-color="#0055eb"/><stop offset=".85" stop-color="#0062ef"/><stop offset="1" stop-color="#003092"/>
+</linearGradient>
+<linearGradient id="window18-btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa4ff"/><stop offset="1" stop-color="#1747c8"/></linearGradient>
+<linearGradient id="window18-close" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5946c"/><stop offset="1" stop-color="#c23c0e"/></linearGradient>
+<linearGradient id="window18-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e6e2cf"/></linearGradient>
+<filter id="window18-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#window18-shadow)">
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V82H4Z" fill="#0831d9"/>
+</g>
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V32H4Z" fill="url(#window18-title)"/>
+<rect x="7" y="32" width="82" height="47" fill="url(#window18-body)"/>
+<text x="11" y="26" font-family="'Trebuchet MS',Tahoma,Arial,sans-serif" font-weight="700" font-size="10" fill="#fff">tgOS</text>
+<g stroke="#fff" stroke-width="1">
+<rect x="54.5" y="17.5" width="9" height="9" rx="2" fill="url(#window18-btn)"/>
+<rect x="65.5" y="17.5" width="9" height="9" rx="2" fill="url(#window18-btn)"/>
+<rect x="76.5" y="17.5" width="9" height="9" rx="2" fill="url(#window18-close)"/>
+</g>
+<path d="M57 24h4" stroke="#fff" stroke-width="1.8"/>
+<rect x="68" y="20" width="4.5" height="4.5" fill="none" stroke="#fff" stroke-width="1.1"/>
+<path d="M68 20h4.5" stroke="#fff" stroke-width="2"/>
+<path d="M79 20l4.5 4.500M83.5 20L79 24.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="35" text-anchor="middle">
+<text x="49" y="62" fill="#fff" opacity=".9">tg</text>
+<text x="48" y="61" fill="#0b3a9e">tg</text>
+</g>
+<rect x="24" y="72" width="48" height="3" rx="1.5" fill="#f58a2c"/></svg><figcaption>16px</figcaption></figure></div><div class="sizes on-bar"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<linearGradient id="window19-title" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0058ee"/><stop offset=".12" stop-color="#3593ff"/><stop offset=".3" stop-color="#0262ee"/>
+<stop offset=".6" stop-color="#0055eb"/><stop offset=".85" stop-color="#0062ef"/><stop offset="1" stop-color="#003092"/>
+</linearGradient>
+<linearGradient id="window19-btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa4ff"/><stop offset="1" stop-color="#1747c8"/></linearGradient>
+<linearGradient id="window19-close" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5946c"/><stop offset="1" stop-color="#c23c0e"/></linearGradient>
+<linearGradient id="window19-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e6e2cf"/></linearGradient>
+<filter id="window19-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#window19-shadow)">
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V82H4Z" fill="#0831d9"/>
+</g>
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V32H4Z" fill="url(#window19-title)"/>
+<rect x="7" y="32" width="82" height="47" fill="url(#window19-body)"/>
+<text x="11" y="26" font-family="'Trebuchet MS',Tahoma,Arial,sans-serif" font-weight="700" font-size="10" fill="#fff">tgOS</text>
+<g stroke="#fff" stroke-width="1">
+<rect x="54.5" y="17.5" width="9" height="9" rx="2" fill="url(#window19-btn)"/>
+<rect x="65.5" y="17.5" width="9" height="9" rx="2" fill="url(#window19-btn)"/>
+<rect x="76.5" y="17.5" width="9" height="9" rx="2" fill="url(#window19-close)"/>
+</g>
+<path d="M57 24h4" stroke="#fff" stroke-width="1.8"/>
+<rect x="68" y="20" width="4.5" height="4.5" fill="none" stroke="#fff" stroke-width="1.1"/>
+<path d="M68 20h4.5" stroke="#fff" stroke-width="2"/>
+<path d="M79 20l4.5 4.500M83.5 20L79 24.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="35" text-anchor="middle">
+<text x="49" y="62" fill="#fff" opacity=".9">tg</text>
+<text x="48" y="61" fill="#0b3a9e">tg</text>
+</g>
+<rect x="24" y="72" width="48" height="3" rx="1.5" fill="#f58a2c"/></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<linearGradient id="window20-title" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0058ee"/><stop offset=".12" stop-color="#3593ff"/><stop offset=".3" stop-color="#0262ee"/>
+<stop offset=".6" stop-color="#0055eb"/><stop offset=".85" stop-color="#0062ef"/><stop offset="1" stop-color="#003092"/>
+</linearGradient>
+<linearGradient id="window20-btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa4ff"/><stop offset="1" stop-color="#1747c8"/></linearGradient>
+<linearGradient id="window20-close" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5946c"/><stop offset="1" stop-color="#c23c0e"/></linearGradient>
+<linearGradient id="window20-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e6e2cf"/></linearGradient>
+<filter id="window20-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#window20-shadow)">
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V82H4Z" fill="#0831d9"/>
+</g>
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V32H4Z" fill="url(#window20-title)"/>
+<rect x="7" y="32" width="82" height="47" fill="url(#window20-body)"/>
+<text x="11" y="26" font-family="'Trebuchet MS',Tahoma,Arial,sans-serif" font-weight="700" font-size="10" fill="#fff">tgOS</text>
+<g stroke="#fff" stroke-width="1">
+<rect x="54.5" y="17.5" width="9" height="9" rx="2" fill="url(#window20-btn)"/>
+<rect x="65.5" y="17.5" width="9" height="9" rx="2" fill="url(#window20-btn)"/>
+<rect x="76.5" y="17.5" width="9" height="9" rx="2" fill="url(#window20-close)"/>
+</g>
+<path d="M57 24h4" stroke="#fff" stroke-width="1.8"/>
+<rect x="68" y="20" width="4.5" height="4.5" fill="none" stroke="#fff" stroke-width="1.1"/>
+<path d="M68 20h4.5" stroke="#fff" stroke-width="2"/>
+<path d="M79 20l4.5 4.500M83.5 20L79 24.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="35" text-anchor="middle">
+<text x="49" y="62" fill="#fff" opacity=".9">tg</text>
+<text x="48" y="61" fill="#0b3a9e">tg</text>
+</g>
+<rect x="24" y="72" width="48" height="3" rx="1.5" fill="#f58a2c"/></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<linearGradient id="window21-title" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0058ee"/><stop offset=".12" stop-color="#3593ff"/><stop offset=".3" stop-color="#0262ee"/>
+<stop offset=".6" stop-color="#0055eb"/><stop offset=".85" stop-color="#0062ef"/><stop offset="1" stop-color="#003092"/>
+</linearGradient>
+<linearGradient id="window21-btn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa4ff"/><stop offset="1" stop-color="#1747c8"/></linearGradient>
+<linearGradient id="window21-close" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5946c"/><stop offset="1" stop-color="#c23c0e"/></linearGradient>
+<linearGradient id="window21-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e6e2cf"/></linearGradient>
+<filter id="window21-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#021a66" flood-opacity="0.5"/></filter></defs>
+<g filter="url(#window21-shadow)">
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V82H4Z" fill="#0831d9"/>
+</g>
+<path d="M4 20A8 8 0 0 1 12 12H84A8 8 0 0 1 92 20V32H4Z" fill="url(#window21-title)"/>
+<rect x="7" y="32" width="82" height="47" fill="url(#window21-body)"/>
+<text x="11" y="26" font-family="'Trebuchet MS',Tahoma,Arial,sans-serif" font-weight="700" font-size="10" fill="#fff">tgOS</text>
+<g stroke="#fff" stroke-width="1">
+<rect x="54.5" y="17.5" width="9" height="9" rx="2" fill="url(#window21-btn)"/>
+<rect x="65.5" y="17.5" width="9" height="9" rx="2" fill="url(#window21-btn)"/>
+<rect x="76.5" y="17.5" width="9" height="9" rx="2" fill="url(#window21-close)"/>
+</g>
+<path d="M57 24h4" stroke="#fff" stroke-width="1.8"/>
+<rect x="68" y="20" width="4.5" height="4.5" fill="none" stroke="#fff" stroke-width="1.1"/>
+<path d="M68 20h4.5" stroke="#fff" stroke-width="2"/>
+<path d="M79 20l4.5 4.500M83.5 20L79 24.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="35" text-anchor="middle">
+<text x="49" y="62" fill="#fff" opacity=".9">tg</text>
+<text x="48" y="61" fill="#0b3a9e">tg</text>
+</g>
+<rect x="24" y="72" width="48" height="3" rx="1.5" fill="#f58a2c"/></svg><figcaption>16px</figcaption></figure></div></div>
+    </article>
+
+    <article class="card">
+      <h2><span class="n">4</span> Green Key</h2>
+      <p>A glossy rounded key in the Start-button green with the initials on it, plus a wordmark with a dark outline and an orange swoosh.</p>
+      <div class="login"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><defs>
+<linearGradient id="key22-green" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7ad67a"/><stop offset=".12" stop-color="#3fa83f"/><stop offset=".5" stop-color="#2f8d2f"/>
+<stop offset=".88" stop-color="#3ca03c"/><stop offset="1" stop-color="#1e6c1e"/>
+</linearGradient>
+<linearGradient id="key22-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<filter id="key22-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#0a3a0a" flood-opacity="0.45"/></filter><filter id="key22-tshadow" x="-10%" y="-20%" width="130%" height="150%"><feDropShadow dx="1.5" dy="2.5" stdDeviation="1.5" flood-color="#021a66" flood-opacity=".5"/></filter>
+<linearGradient id="key22-wm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d3e2ff"/></linearGradient>
+<linearGradient id="key22-swoosh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb13b"/><stop offset="1" stop-color="#ffb13b" stop-opacity="0"/></linearGradient></defs>
+<g filter="url(#key22-shadow)"><rect x="5" y="4" width="86" height="86" rx="22" fill="url(#key22-green)" stroke="#fff" stroke-width="3"/></g>
+<rect x="3.5" y="2.5" width="89" height="89" rx="23.5" fill="none" stroke="#1c6a1c"/>
+<path d="M10 32C10 17 21 9 36 9H60C75 9 86 17 86 32C64 43 32 43 10 32Z" fill="url(#key22-gloss)"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="64" fill="#0a3a0a" opacity=".55">tg</text>
+<text x="48" y="62" fill="#fff">tg</text>
+</g><text x="104" y="62" font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="60" fill="url(#key22-wm)" stroke="#0a2f9a" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke" filter="url(#key22-tshadow)">tgOS</text>
+<path d="M106 76C140 70 200 70 258 78" fill="none" stroke="url(#key22-swoosh)" stroke-width="3.5" stroke-linecap="round"/></svg></div>
+      <div class="rows"><div class="sizes on-white"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<linearGradient id="key23-green" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7ad67a"/><stop offset=".12" stop-color="#3fa83f"/><stop offset=".5" stop-color="#2f8d2f"/>
+<stop offset=".88" stop-color="#3ca03c"/><stop offset="1" stop-color="#1e6c1e"/>
+</linearGradient>
+<linearGradient id="key23-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<filter id="key23-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#0a3a0a" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#key23-shadow)"><rect x="5" y="4" width="86" height="86" rx="22" fill="url(#key23-green)" stroke="#fff" stroke-width="3"/></g>
+<rect x="3.5" y="2.5" width="89" height="89" rx="23.5" fill="none" stroke="#1c6a1c"/>
+<path d="M10 32C10 17 21 9 36 9H60C75 9 86 17 86 32C64 43 32 43 10 32Z" fill="url(#key23-gloss)"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="64" fill="#0a3a0a" opacity=".55">tg</text>
+<text x="48" y="62" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<linearGradient id="key24-green" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7ad67a"/><stop offset=".12" stop-color="#3fa83f"/><stop offset=".5" stop-color="#2f8d2f"/>
+<stop offset=".88" stop-color="#3ca03c"/><stop offset="1" stop-color="#1e6c1e"/>
+</linearGradient>
+<linearGradient id="key24-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<filter id="key24-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#0a3a0a" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#key24-shadow)"><rect x="5" y="4" width="86" height="86" rx="22" fill="url(#key24-green)" stroke="#fff" stroke-width="3"/></g>
+<rect x="3.5" y="2.5" width="89" height="89" rx="23.5" fill="none" stroke="#1c6a1c"/>
+<path d="M10 32C10 17 21 9 36 9H60C75 9 86 17 86 32C64 43 32 43 10 32Z" fill="url(#key24-gloss)"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="64" fill="#0a3a0a" opacity=".55">tg</text>
+<text x="48" y="62" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<linearGradient id="key25-green" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7ad67a"/><stop offset=".12" stop-color="#3fa83f"/><stop offset=".5" stop-color="#2f8d2f"/>
+<stop offset=".88" stop-color="#3ca03c"/><stop offset="1" stop-color="#1e6c1e"/>
+</linearGradient>
+<linearGradient id="key25-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<filter id="key25-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#0a3a0a" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#key25-shadow)"><rect x="5" y="4" width="86" height="86" rx="22" fill="url(#key25-green)" stroke="#fff" stroke-width="3"/></g>
+<rect x="3.5" y="2.5" width="89" height="89" rx="23.5" fill="none" stroke="#1c6a1c"/>
+<path d="M10 32C10 17 21 9 36 9H60C75 9 86 17 86 32C64 43 32 43 10 32Z" fill="url(#key25-gloss)"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="64" fill="#0a3a0a" opacity=".55">tg</text>
+<text x="48" y="62" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div><div class="sizes on-bar"><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="64" height="64"><defs>
+<linearGradient id="key26-green" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7ad67a"/><stop offset=".12" stop-color="#3fa83f"/><stop offset=".5" stop-color="#2f8d2f"/>
+<stop offset=".88" stop-color="#3ca03c"/><stop offset="1" stop-color="#1e6c1e"/>
+</linearGradient>
+<linearGradient id="key26-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<filter id="key26-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#0a3a0a" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#key26-shadow)"><rect x="5" y="4" width="86" height="86" rx="22" fill="url(#key26-green)" stroke="#fff" stroke-width="3"/></g>
+<rect x="3.5" y="2.5" width="89" height="89" rx="23.5" fill="none" stroke="#1c6a1c"/>
+<path d="M10 32C10 17 21 9 36 9H60C75 9 86 17 86 32C64 43 32 43 10 32Z" fill="url(#key26-gloss)"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="64" fill="#0a3a0a" opacity=".55">tg</text>
+<text x="48" y="62" fill="#fff">tg</text>
+</g></svg><figcaption>64px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="32" height="32"><defs>
+<linearGradient id="key27-green" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7ad67a"/><stop offset=".12" stop-color="#3fa83f"/><stop offset=".5" stop-color="#2f8d2f"/>
+<stop offset=".88" stop-color="#3ca03c"/><stop offset="1" stop-color="#1e6c1e"/>
+</linearGradient>
+<linearGradient id="key27-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<filter id="key27-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#0a3a0a" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#key27-shadow)"><rect x="5" y="4" width="86" height="86" rx="22" fill="url(#key27-green)" stroke="#fff" stroke-width="3"/></g>
+<rect x="3.5" y="2.5" width="89" height="89" rx="23.5" fill="none" stroke="#1c6a1c"/>
+<path d="M10 32C10 17 21 9 36 9H60C75 9 86 17 86 32C64 43 32 43 10 32Z" fill="url(#key27-gloss)"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="64" fill="#0a3a0a" opacity=".55">tg</text>
+<text x="48" y="62" fill="#fff">tg</text>
+</g></svg><figcaption>32px</figcaption></figure><figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="16" height="16"><defs>
+<linearGradient id="key28-green" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7ad67a"/><stop offset=".12" stop-color="#3fa83f"/><stop offset=".5" stop-color="#2f8d2f"/>
+<stop offset=".88" stop-color="#3ca03c"/><stop offset="1" stop-color="#1e6c1e"/>
+</linearGradient>
+<linearGradient id="key28-gloss" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<filter id="key28-shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#0a3a0a" flood-opacity="0.45"/></filter></defs>
+<g filter="url(#key28-shadow)"><rect x="5" y="4" width="86" height="86" rx="22" fill="url(#key28-green)" stroke="#fff" stroke-width="3"/></g>
+<rect x="3.5" y="2.5" width="89" height="89" rx="23.5" fill="none" stroke="#1c6a1c"/>
+<path d="M10 32C10 17 21 9 36 9H60C75 9 86 17 86 32C64 43 32 43 10 32Z" fill="url(#key28-gloss)"/>
+<g font-family="'Franklin Gothic Medium','Franklin Gothic','Trebuchet MS',Tahoma,Arial,sans-serif" font-style="italic" font-weight="700" font-size="52" text-anchor="middle">
+<text x="49.5" y="64" fill="#0a3a0a" opacity=".55">tg</text>
+<text x="48" y="62" fill="#fff">tg</text>
+</g></svg><figcaption>16px</figcaption></figure></div></div>
+    </article>
+</main>
+</body>
+</html>

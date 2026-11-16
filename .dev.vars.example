@@ -1,0 +1,46 @@
+# Local development settings for the log-on gate. Copy this file to `.dev.vars` (which is git-ignored).
+#
+# These are Cloudflare's published *dummy* Turnstile keys: they always pass, on any hostname,
+# so the login flow can be exercised locally without a real widget.
+# https://developers.cloudflare.com/turnstile/troubleshooting/testing/
+TURNSTILE_SITE_KEY=1x00000000000000000000AA
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+
+# Dummy keys report no `action` and the hostname `example.com`, so the Worker's strict action and
+# hostname checks are relaxed when this is "true" AND Cloudflare's response confirms a testing key.
+# NEVER set this in production.
+TURNSTILE_TEST_MODE=true
+
+# Signs the session cookie. Generate one with:
+#   node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"
+SESSION_SECRET=replace-me-with-a-long-random-string
+
+# Optional. Comma-separated hostnames Turnstile tokens must have been issued on. Empty = the request host.
+TURNSTILE_HOSTNAMES=
+
+# Passwords for the Trent and Family & Friends users (Guests need none). In production set these with
+# `wrangler secret put PASSWORD_TRENT` / `PASSWORD_FAMILY`; until they are set, those two users can't log on.
+PASSWORD_TRENT=replace-me
+PASSWORD_FAMILY=replace-me
+
+# The Photos app reads albums from Trent's Immich server, through a Cloudflare Tunnel that Cloudflare
+# Access locks to one service token (the "tgos-site" token in Zero Trust → Access → Service Auth).
+# Only the Worker holds the token, so nothing else on the internet can reach Immich.
+IMMICH_URL=https://immich-origin.trentgibson.com
+IMMICH_ACCESS_CLIENT_ID=
+IMMICH_ACCESS_CLIENT_SECRET=
+# An Immich API key with ONLY the `sharedLink.read` permission. The Worker uses it to list share links;
+# any link whose Description contains [site] appears in the Photos app ([private] hides it from Guests).
+IMMICH_API_KEY=
+
+# Production only (set with `wrangler secret put` / the dashboard, not here):
+#   TURNSTILE_SITE_KEY      your real widget's sitekey (a plain var in wrangler.jsonc)
+#   TURNSTILE_SECRET_KEY    your real widget's secret
+#   SESSION_SECRET          a long random string
+#   PASSWORD_TRENT          the Trent user's password
+#   PASSWORD_FAMILY         the Family & Friends password
+#   TURNSTILE_HOSTNAMES     optional comma-separated hostnames the widget runs on; defaults to the request host
+#   IMMICH_ACCESS_CLIENT_ID      the tgos-site service token's Client ID
+#   IMMICH_ACCESS_CLIENT_SECRET  the tgos-site service token's Client Secret
+#   IMMICH_API_KEY               the read-only (sharedLink.read) Immich API key
+#   IMMICH_URL can stay in wrangler.jsonc `vars`: it isn't secret, and Access blocks it without the token.

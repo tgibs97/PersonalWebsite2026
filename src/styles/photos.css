@@ -1,0 +1,314 @@
+/* Photos (src/apps/Photos.tsx): an XP "My Pictures" folder in Thumbnails view, and a picture viewer. */
+
+.ph {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  font-size: 11px;
+}
+
+/* ---------- Toolbar: Back, and the folder path ---------- */
+
+.ph-toolbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 3px 6px;
+  border-bottom: 1px solid #c5c2b2;
+  background: var(--xp-beige);
+}
+
+.ph-tool {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px 2px 3px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: none;
+  cursor: default;
+}
+
+.ph-tool:not(:disabled):hover {
+  border-color: #c3bfa9;
+  background: #f8f7f1;
+}
+
+.ph-tool:disabled {
+  color: #a6a495;
+}
+
+.ph-path {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px;
+  border: 1px solid #7f9db9;
+  background: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ph-crumb {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #0b3a9e;
+  cursor: pointer;
+}
+
+.ph-crumb:disabled {
+  color: inherit;
+  cursor: default;
+}
+
+.ph-crumb:not(:disabled):hover {
+  text-decoration: underline;
+}
+
+.ph-crumb-current {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Thumbnails ---------- */
+
+.ph-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.ph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 14px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ph-tile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  border: none;
+  background: none;
+  cursor: default;
+}
+
+/* XP's Thumbnails view: each picture in a square frame, shrunk to fit. */
+.ph-frame {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d4d0c8;
+  background: #f6f5ef;
+}
+
+.ph-frame img {
+  max-width: 94px;
+  max-height: 94px;
+  object-fit: contain;
+}
+
+/* An album: a small stack of frames behind its cover. */
+.ph-album .ph-frame {
+  box-shadow:
+    3px -3px 0 -1px #fff,
+    3px -3px 0 0 #d4d0c8,
+    6px -6px 0 -1px #fff,
+    6px -6px 0 0 #d4d0c8;
+}
+
+.ph-play {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 60%);
+}
+
+.ph-play::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 5px;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.ph-label,
+.ph-sub {
+  max-width: 100%;
+  padding: 0 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ph-sub {
+  color: #6b6450;
+}
+
+.ph-tile:focus-visible {
+  outline: none;
+}
+
+.ph-tile:hover .ph-frame,
+.ph-tile:focus-visible .ph-frame {
+  border-color: var(--xp-select);
+}
+
+.ph-tile:focus-visible .ph-label {
+  background: var(--xp-select);
+  color: #fff;
+}
+
+.ph-note {
+  margin: 24px auto;
+  max-width: 300px;
+  color: #444;
+  text-align: center;
+}
+
+.ph-note p {
+  margin: 0 0 10px;
+}
+
+.ph-retry {
+  padding: 4px 14px;
+}
+
+.ph-status {
+  flex: none;
+  padding: 3px 8px;
+  border-top: 1px solid #c5c2b2;
+  background: var(--xp-beige);
+  color: #333;
+}
+
+/* ---------- Picture viewer ---------- */
+
+.ph-viewer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  outline: none;
+}
+
+.ph-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #fff;
+}
+
+.ph-stage img,
+.ph-stage video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  box-shadow: 1px 2px 6px rgb(0 0 0 / 25%);
+}
+
+.ph-viewer-bar {
+  flex: none;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border-top: 1px solid #c5c2b2;
+  background: linear-gradient(to bottom, #faf9f4, #e8e5d6);
+}
+
+.ph-viewer-info {
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ph-viewer-nav {
+  display: flex;
+  gap: 6px;
+}
+
+/* The round green buttons of XP's picture viewer. */
+.ph-round {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #1f6b1a;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #8fdc7f, #3d9c36 60%, #2a7a24);
+  cursor: default;
+}
+
+.ph-round:hover {
+  filter: brightness(1.08);
+}
+
+.ph-round:active {
+  filter: brightness(0.92);
+}
+
+.ph-close {
+  justify-self: end;
+  padding: 4px 10px;
+}
+
+/* ---------- Small screens and touch (the two rules are explained in luna.css) ---------- */
+
+@media (max-width: 700px) {
+  .ph-body {
+    padding: 8px;
+  }
+
+  /* Three to a row on a phone, instead of two with a lot of space around them. */
+  .ph-grid {
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: 12px 6px;
+  }
+}
+
+@media (pointer: coarse) {
+  .ph-tool {
+    padding-block: 7px;
+  }
+
+  .ph-round {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ph-close {
+    padding: 8px 14px;
+  }
+}

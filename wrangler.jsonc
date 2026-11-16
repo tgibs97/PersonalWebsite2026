@@ -11,10 +11,13 @@
     // site is served until the visitor holds a session cookie (see worker/index.ts).
     "run_worker_first": true
   },
+  // The site lives at trentgibson.com. A custom domain makes Cloudflare create the DNS record and certificate on
+  // deploy, but only if that name has no DNS record of its own already.
+  "routes": [{ "pattern": "trentgibson.com", "custom_domain": true }],
   "vars": {
-    // Public. Replace with your real Turnstile widget's sitekey before deploying (local dev uses
-    // the dummy key from .dev.vars). The matching secret is NOT stored here: see .dev.vars.example.
-    "TURNSTILE_SITE_KEY": "REPLACE_WITH_YOUR_TURNSTILE_SITEKEY"
+    // Public. The real Turnstile widget's sitekey (local dev uses the dummy key from .dev.vars).
+    // The matching secret is NOT stored here: see .dev.vars.example.
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAGEFxsVhertb8qWj"
   },
   // Storage. D1 is the database (items, purchases); R2 holds the wishlist's pictures. Both are free at this
   // size. Locally they run in memory-on-disk under .wrangler/ and need no setup beyond `npm run db:migrate`.
@@ -25,7 +28,7 @@
     {
       "binding": "DB",
       "database_name": "tgos",
-      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+      "database_id": "79b30420-ff66-4df8-b5be-b0af438cdaf1",
       "migrations_dir": "migrations"
     }
   ],

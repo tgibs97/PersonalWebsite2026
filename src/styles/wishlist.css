@@ -255,6 +255,47 @@
   color: #fff;
 }
 
+/* Drag a row by this handle to move it anywhere in the list. */
+.wl-grip {
+  flex: none;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 0 4px 0 0;
+  color: #a39f8e;
+  cursor: grab;
+  touch-action: none; /* a finger on it drags the row instead of scrolling the list */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.wl-grip:hover {
+  color: #555;
+}
+
+.wl-row.selected .wl-grip {
+  color: rgb(255 255 255 / 70%);
+}
+
+.wl-list.dragging {
+  cursor: grabbing;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.wl-row.dragged {
+  opacity: 0.4;
+}
+
+/* An orange bar where the dragged row would land (it shows over the selected row's blue too). */
+.wl-row.drop-before {
+  box-shadow: inset 0 3px 0 #f58a2c;
+}
+
+.wl-row.drop-after {
+  box-shadow: inset 0 -3px 0 #f58a2c;
+}
+
 .wl-row-main {
   flex: 1;
   min-width: 0;
@@ -489,6 +530,10 @@
 @media (pointer: coarse) {
   .wl-row {
     padding-block: 7px;
+  }
+
+  .wl-grip {
+    padding: 0 8px 0 4px;
   }
 
   .wl-arrows button {

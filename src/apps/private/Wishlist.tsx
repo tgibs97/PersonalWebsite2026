@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { LoadingImage, Spinner } from '../../os/Spinner'
 import css from '../../styles/wishlist.css?inline'
 
@@ -364,6 +364,14 @@ function Manager({ data, reload }: { data: Loaded; reload: () => Promise<void> }
   const [askReveal, setAskReveal] = useState(false)
   const [busy, setBusy] = useState(false)
   const dirty = useRef(false)
+  const listRef = useRef<HTMLDivElement>(null)
+  /** The item being dragged, and where it would land among the others (0 = first). */
+  const [drag, setDrag] = useState<{ id: string; to: number } | null>(null)
+  /** The new order, shown straight away while it is being saved (so the list doesn't jump back and forth). */
+  const [order, setOrder] = useState<string[] | null>(null)
+
+  const byId = new Map(data.items.map((i) => [i.id, i]))
+  const items = order ? order.flatMap((id) => byId.get(id) ?? []) : data.items
 
   const current = selected && selected !== 'new' ? data.items.find((i) => i.id === selected) ?? null : null
   // If the selected item vanished (deleted elsewhere), fall back to nothing.
@@ -385,6 +393,82 @@ function Manager({ data, reload }: { data: Loaded; reload: () => Promise<void> }
     await call('PUT', '/order', { ids })
     await reload()
     setBusy(false)
+  }
+
+  /** The extra class a row gets while another is being dragged: the orange bar marks where it would land. */
+  function dragMark(id: string): string {
+    if (!drag) return ''
+    if (id === drag.id) return ' dragged'
+    if (drag.to === items.findIndex((i) => i.id === drag.id)) return '' // dropped where it already is
+    const others = items.filter((i) => i.id !== drag.id)
+    if (drag.to < others.length) return others[drag.to].id === id ? ' drop-before' : ''
+    return others[others.length - 1].id === id ? ' drop-after' : ''
+  }
+
+  /** Save a whole new order, showing it at once. */
+  async function saveOrder(ids: string[]) {
+    setOrder(ids)
+    setBusy(true)
+    await call('PUT', '/order', { ids })
+    await reload()
+    setOrder(null)
+    setBusy(false)
+  }
+
+  /**
+   * Drag a row by its grip to move it anywhere in one go. Pointer events, so it works with a finger as well as a
+   * mouse; the list scrolls by itself when the pointer is near its top or bottom edge.
+   */
+  function startDrag(e: ReactPointerEvent<HTMLElement>, id: string) {
+    const list = listRef.current
+    if (e.button !== 0 || busy || !list) return
+    e.preventDefault()
+    const grip = e.currentTarget
+    grip.setPointerCapture(e.pointerId)
+    const ids = items.map((i) => i.id)
+    const from = ids.indexOf(id)
+    let to = from
+    let pointerY = e.clientY
+    setDrag({ id, to })
+
+    const tick = () => {
+      const box = list.getBoundingClientRect()
+      const edge = 40
+      if (pointerY < box.top + edge) list.scrollTop -= Math.min(18, Math.ceil((box.top + edge - pointerY) / 3))
+      else if (pointerY > box.bottom - edge) list.scrollTop += Math.min(18, Math.ceil((pointerY - (box.bottom - edge)) / 3))
+      // It lands after every other row whose middle is above the pointer.
+      let above = 0
+      list.querySelectorAll<HTMLElement>('.wl-row').forEach((row, i) => {
+        if (i === from) return
+        const r = row.getBoundingClientRect()
+        if (pointerY > r.top + r.height / 2) above++
+      })
+      if (above !== to) {
+        to = above
+        setDrag({ id, to })
+      }
+      frame = requestAnimationFrame(tick)
+    }
+    let frame = requestAnimationFrame(tick)
+
+    const move = (ev: PointerEvent) => {
+      pointerY = ev.clientY
+    }
+    const end = (ev: PointerEvent) => {
+      cancelAnimationFrame(frame)
+      grip.removeEventListener('pointermove', move)
+      grip.removeEventListener('pointerup', end)
+      grip.removeEventListener('pointercancel', end)
+      setDrag(null)
+      if (ev.type === 'pointerup' && to !== from) {
+        const next = ids.filter((x) => x !== id)
+        next.splice(to, 0, id)
+        void saveOrder(next)
+      }
+    }
+    grip.addEventListener('pointermove', move)
+    grip.addEventListener('pointerup', end)
+    grip.addEventListener('pointercancel', end)
   }
 
   async function setRevealed(revealed: boolean) {
@@ -450,10 +534,20 @@ function Manager({ data, reload }: { data: Loaded; reload: () => Promise<void> }
       )}
 
       <div className="wl-manager">
-        <div className="wl-list" role="list">
+        <div className={`wl-list${drag ? ' dragging' : ''}`} role="list" ref={listRef}>
           {data.items.length === 0 && <p className="wl-note">No items yet. Press “New item” to add one.</p>}
-          {data.items.map((item, index) => (
-            <div key={item.id} className={`wl-row${effective === item.id ? ' selected' : ''}`} role="listitem">
+          {items.map((item, index) => (
+            <div key={item.id} className={`wl-row${effective === item.id ? ' selected' : ''}${dragMark(item.id)}`} role="listitem">
+              <span className="wl-grip" title="Drag to move" aria-hidden="true" onPointerDown={(e) => startDrag(e, item.id)}>
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="currentColor">
+                  <circle cx="2" cy="2" r="1.2" />
+                  <circle cx="6" cy="2" r="1.2" />
+                  <circle cx="2" cy="7" r="1.2" />
+                  <circle cx="6" cy="7" r="1.2" />
+                  <circle cx="2" cy="12" r="1.2" />
+                  <circle cx="6" cy="12" r="1.2" />
+                </svg>
+              </span>
               <button className="wl-row-main" onClick={() => choose(item.id)}>
                 <b>{item.name}</b>
                 <small>
@@ -465,7 +559,7 @@ function Manager({ data, reload }: { data: Loaded; reload: () => Promise<void> }
                 <button onClick={() => void move(item.id, -1)} disabled={busy || index === 0} aria-label={`Move ${item.name} up`}>
                   ▲
                 </button>
-                <button onClick={() => void move(item.id, 1)} disabled={busy || index === data.items.length - 1} aria-label={`Move ${item.name} down`}>
+                <button onClick={() => void move(item.id, 1)} disabled={busy || index === items.length - 1} aria-label={`Move ${item.name} down`}>
                   ▼
                 </button>
               </span>
